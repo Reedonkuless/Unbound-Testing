@@ -1,0 +1,44 @@
+name: RC1 Pages Preview
+
+on:
+  push:
+    branches:
+      - save-studio-v0.4.0-rc1-preview
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: rc1-pages-preview
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout preview branch
+        uses: actions/checkout@v4
+      - name: Expand exact RC1 bundle
+        run: |
+          rm -rf _site
+          mkdir _site
+          unzip -q Unbound_Save_Studio_v0.4.0_Unified_RC1.zip -d _site
+          test -f _site/index.html
+          test -f _site/rom-patcher/index.html
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
