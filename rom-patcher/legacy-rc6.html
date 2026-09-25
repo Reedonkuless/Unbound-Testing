@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Pokémon Unbound Unified ROM Patcher</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../dark.css">
+  <link rel="stylesheet" href="../patch.css">
+</head>
+<body>
+  <main class="patch-shell">
+    <div class="patch-card">
+      <span class="eyebrow">GAMEPLAY FIX RC6 · FINAL ROM-SIDE BUILD</span>
+      <h1>Unified Pokémon Unbound patcher</h1>
+      <p>Builds the exact hash-verified gameplay ROM for Grimble → Frostyrant and Mournevoir, including the finalized custom party icons, Permafrost presentation fix, Soul Requiem item-name fix, custom moves, and Heart of Darkness.</p>
+      <p>Your original ROM stays local in the browser. No ROM is uploaded or bundled.</p>
+
+      <label class="dropzone" for="rom">
+        <strong>Select exact Unbound v2.1.1.1 ROM</strong>
+        <span>32 MiB .gba</span>
+        <input id="rom" type="file" accept=".gba,application/octet-stream">
+      </label>
+
+      <p id="selection" class="patch-selection">No ROM selected.</p>
+      <div class="patch-actions">
+        <button id="patch-rom" class="primary-button" type="button" disabled>Patch ROM</button>
+        <a id="download-rom" class="primary-button patch-download" href="#" download="Pokemon Unbound - Unified Custom Final.gba" hidden>Download patched ROM</a>
+      </div>
+
+      <p id="status" role="status" aria-live="polite">Waiting for original ROM.</p>
+      <p class="patch-note">On iPhone/iPad, wait for the PASS message, then tap <strong>Download patched ROM</strong>. Your browser may open a file preview or Files sheet; save the resulting <code>.gba</code> file from there.</p>
+      <p class="hash-note">Expected final SHA-256:<br><code>fcefa1341858363be236e57cd4b1bfcd725dc4ec67261ecdf3e37ac22d3a2c0e</code></p>
+      <p><a href="../">Back to Save Studio</a></p>
+    </div>
+  </main>
+
+  <script>
+  (function () {
+    'use strict';
+
+    var ROM_SIZE = 0x2000000;
+    var SOURCE_SHA1 = 'b4776b82a4c7915d0fadeaa27e013523f99dfd94';
+    var SOURCE_SHA256 = '7aa25bbf568f7cfcf6ee1cf2e9e6ff637350b3d0705c2375cabb6baa7d9739f7';
+    var TARGET_SHA1 = '15b818eb3b6028100cc7eebc68e72a44bf96f7af';
+    var TARGET_SHA256 = 'fcefa1341858363be236e57cd4b1bfcd725dc4ec67261ecdf3e37ac22d3a2c0e';
+    var RAW_PAYLOAD_SHA256 = 'd5a9d25c4bde049b0e2c2e0b2108e5dcbb75b311f1cf4dbe083f49f2b3bfb387';
+
+    var input = document.getElementById('rom');
+    var patchButton = document.getElementById('patch-rom');
+    var download = document.getElementById('download-rom');
+    var selection = document.getElementById('selection');
+    var status = document.getElementById('status');
+    var outputUrl = null;
+
+    function setStatus(message, isError) {
+      status.textContent = message;
+      status.classList.toggle('error', Boolean(isError));
+    }
+
+    function clearOutput() {
+      if (outputUrl) {
+        URL.revokeObjectURL(outputUrl);
+        outputUrl = null;
+      }
+      download.hidden = true;
+      download.removeAttribute('href');
+    }
+
+    function readFile(file) {
+      return new Promise(function (resolve, reject) {
+        var reader = new FileReader();
+        reader.onload = function () { resolve(reader.result); };
+        reader.onerror = function () { reject(reader.error || new Error('The ROM file could not be read.')); };
+        reader.onabort = function () { reject(new Error('ROM file reading was cancelled.')); };
+        reader.readAsArrayBuffer(file);
+      });
+    }
+
+    function toHex(buffer) {
+      var bytes = new Uint8Array(buffer);
+      var out = '';
+      for (var i = 0; i < bytes.length; i++) out += bytes[i].toString(16).padStart(2, '0');
+      return out;
+    }
+
+    async function digest(bytes, algorithm) {
+      if (!window.crypto || !window.crypto.subtle) throw new Error('This browser does not provide the secure Web Crypto API required by the patcher. Open the HTTPS site in Safari or another current browser.');
+      return toHex(await window.crypto.subtle.digest(algorithm, bytes));
+    }
+
+    async function applyUnifiedPatch(source, payload) {
+      if (source.length !== ROM_SIZE) throw new Error('Expected 33,554,432 bytes; got ' + source.length.toLocaleString() + '.');
+
+      setStatus('Verifying original ROM (SHA-1)…');
+      var s1 = await digest(source, 'SHA-1');
+      setStatus('Verifying original ROM (SHA-256)…');
+      var s256 = await digest(source, 'SHA-256');
+      if (s1 !== SOURCE_SHA1 || s256 !== SOURCE_SHA256) throw new Error('This patcher requires the exact original Pokémon Unbound v2.1.1.1 ROM.');
+
+      setStatus('Verifying patch payload…');
+      if (await digest(payload, 'SHA-256') !== RAW_PAYLOAD_SHA256) throw new Error('Unified patch payload integrity check failed.');
+      if (payload.length < 12 || String.fromCharCode.apply(null, payload.subarray(0, 4)) !== 'UPF1') throw new Error('Unrecognized unified patch payload.');
+
+      var view = new DataView(payload.buffer, payload.byteOffset, payload.byteLength);
+      var romSize = view.getUint32(4, true);
+      var count = view.getUint32(8, true);
+      if (romSize !== ROM_SIZE) throw new Error('Unified patch payload ROM-size mismatch.');
+
+      setStatus('Applying unified patch…');
+      var output = source.slice();
+      var at = 12;
+      var lastEnd = 0;
+      for (var i = 0; i < count; i++) {
+        if (at + 8 > payload.length) throw new Error('Truncated unified patch record header.');
+        var offset = view.getUint32(at, true);
+        var length = view.getUint32(at + 4, true);
+        at += 8;
+        if (offset < lastEnd || offset + length > ROM_SIZE || at + length > payload.length) throw new Error('Malformed or overlapping unified patch record.');
+        output.set(payload.subarray(at, at + length), offset);
+        at += length;
+        lastEnd = offset + length;
+      }
+      if (at !== payload.length) throw new Error('Unexpected trailing bytes in unified patch payload.');
+
+      setStatus('Verifying patched ROM (SHA-1)…');
+      var o1 = await digest(output, 'SHA-1');
+      setStatus('Verifying patched ROM (SHA-256)…');
+      var o256 = await digest(output, 'SHA-256');
+      if (o1 !== TARGET_SHA1 || o256 !== TARGET_SHA256) throw new Error('Patched ROM verification failed.');
+      return output;
+    }
+
+    input.addEventListener('change', function () {
+      clearOutput();
+      var file = input.files && input.files[0];
+      if (!file) {
+        selection.textContent = 'No ROM selected.';
+        patchButton.disabled = true;
+        setStatus('Waiting for original ROM.');
+        return;
+      }
+      selection.textContent = file.name + ' · ' + file.size.toLocaleString() + ' bytes';
+      patchButton.disabled = false;
+      if (file.size === ROM_SIZE) setStatus('ROM selected. Tap Patch ROM to verify and build the unified ROM.');
+      else setStatus('ROM selected, but the size is not 33,554,432 bytes. Tap Patch ROM to see the exact validation error.', true);
+    });
+
+    patchButton.addEventListener('click', async function () {
+      var file = input.files && input.files[0];
+      if (!file) {
+        setStatus('Choose the original Unbound v2.1.1.1 ROM first.', true);
+        return;
+      }
+
+      clearOutput();
+      patchButton.disabled = true;
+      input.disabled = true;
+      try {
+        setStatus('Reading original ROM…');
+        var source = new Uint8Array(await readFile(file));
+
+        setStatus('Loading unified patch payload…');
+        var response = await fetch('/rom-patcher/Unbound_Final_Unified_2026-09-24_RC6.upf', { cache: 'no-store' });
+        if (!response.ok) throw new Error('Unified patch payload could not be loaded (HTTP ' + response.status + ').');
+        var payload = new Uint8Array(await response.arrayBuffer());
+
+        var output = await applyUnifiedPatch(source, payload);
+        outputUrl = URL.createObjectURL(new Blob([output], { type: 'application/octet-stream' }));
+        download.href = outputUrl;
+        download.hidden = false;
+        setStatus('PASS — exact final unified ROM generated and hash-verified. Tap Download patched ROM.');
+      } catch (error) {
+        setStatus(error && error.message ? error.message : String(error), true);
+      } finally {
+        patchButton.disabled = false;
+        input.disabled = false;
+      }
+    });
+
+    window.addEventListener('pagehide', clearOutput);
+    setStatus('Waiting for original ROM.');
+  }());
+  </script>
+</body>
+</html>

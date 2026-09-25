@@ -1,0 +1,43 @@
+{
+  "release": "v0.4.0 Unified RC6 \u2014 Soul Requiem presentation update",
+  "parent_rc5": {
+    "sha1": "15b818eb3b6028100cc7eebc68e72a44bf96f7af",
+    "sha256": "fcefa1341858363be236e57cd4b1bfcd725dc4ec67261ecdf3e37ac22d3a2c0e"
+  },
+  "rc6": {
+    "bytes": 33554432,
+    "sha1": "15b818eb3b6028100cc7eebc68e72a44bf96f7af",
+    "sha256": "fcefa1341858363be236e57cd4b1bfcd725dc4ec67261ecdf3e37ac22d3a2c0e"
+  },
+  "changes_from_rc5": [
+    {
+      "label": "item 729 name field: Soul Requiem",
+      "offset": "0x87df4c",
+      "size": 14,
+      "old_hex": "bed5e6df00ccd9e5e9ddd9e1ff00",
+      "new_hex": "cde3e9e000ccd9e5e9ddd9e1ff00",
+      "old_sha256": "5ab7ed9e87a5e4ce128d1899c0e326f0a666efe926af7f9b729ddadde8e3492b",
+      "new_sha256": "9fe3a420d629923a7b2fe0d5abbcbc495416e6197e34133ced109bf62176a479"
+    },
+    {
+      "label": "item 729 icon+palette pointer pair: native Soul Dew item 191",
+      "offset": "0x25bc1c",
+      "size": 8,
+      "old_hex": "f0b32a08b0b42a08",
+      "new_hex": "e0e5e80874e6e808",
+      "source_item": 191,
+      "source_offset": "0x25ab4c",
+      "source_hex": "e0e5e80874e6e808",
+      "old_sha256": "483ab05e538e36a49162699509dbda9e699954c401dee39cfa02db2093830c80",
+      "new_sha256": "915fac9b927c135c48c472a2a17e16eb71d1c972619e79b75d40d142b6586f2c"
+    }
+  ],
+  "verification": {
+    "item729_name_length_chars": 12,
+    "item729_icon_pair_equals_item191": true,
+    "item191_unchanged_from_rc5": true,
+    "item729_record_non_name_bytes_unchanged": true,
+    "rom_changes_confined_to_name_and_icon_pointer_fields": true,
+    "physical_changed_bytes_from_rc5": 10
+  }
+}

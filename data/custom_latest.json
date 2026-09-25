@@ -1,0 +1,53 @@
+{
+  "checkpoint": "CP33 editor metadata",
+  "species": {
+    "1298": "Grimble",
+    "1299": "Gravibite",
+    "1300": "Dreadchomp",
+    "1301": "Frostyrant",
+    "1302": "Mournevoir"
+  },
+  "abilities": {
+    "77": {
+      "name": "Permafrost",
+      "summary": "Ice immune. Ice STAB."
+    },
+    "1302_virtual": {
+      "name": "Eclipse Heart",
+      "summary": [
+        "Weakens first hit.",
+        "Heals when switching out."
+      ]
+    }
+  },
+  "moves": {
+    "923": "Glacial Rend",
+    "924": "TyrantPrison",
+    "925": "Dark Whisper",
+    "926": "Fey Bane"
+  },
+  "items": {
+    "729": {
+      "name": "Soul Requiem",
+      "icon_source": "Soul Dew / item191"
+    },
+    "730": {
+      "name": "Tyrant's Crown",
+      "effect": "Frozen Sovereignty",
+      "icon_source": "Relic Crown / item669"
+    }
+  },
+  "mournevoir_stats": {
+    "hp": 68,
+    "atk": 85,
+    "def": 65,
+    "spa": 165,
+    "spd": 135,
+    "spe": 100
+  },
+  "rom_patcher": {
+    "latest_input_sha1": "27995aec07b7111645161b4d29698d7d21e55ac9",
+    "latest_input_sha256": "5a918128ef36a8bd10261cd2d2356c744f8789d2bc48563f5b42fea5a2a9b5e4",
+    "clean_base_latest_status": "blocked until exact CP27 reconstruction is available"
+  }
+}

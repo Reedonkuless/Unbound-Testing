@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "source_save_sha256": "9df9135cb4acbd25b894f7084fe6c34f6977f3a516fd53e615a98dd2eacb40e3",
+  "source_save_modified": false,
+  "catalogs": {
+    "species_1302": "Mournevoir",
+    "item_729": "Soul Requiem",
+    "move_923": {
+      "name": "Glacial Rend",
+      "pp": 10
+    },
+    "move_924": {
+      "name": "TyrantPrison",
+      "pp": 5
+    }
+  },
+  "party": {
+    "species": 1302,
+    "level": 44,
+    "item": 729,
+    "moves": [
+      94,
+      188,
+      923,
+      924
+    ],
+    "pp": [
+      10,
+      10,
+      10,
+      5
+    ],
+    "ability": "Heart of Darkness",
+    "carrier_ability_id": 0,
+    "current_ability_index": 0
+  },
+  "pc": {
+    "box": 1,
+    "slot": 1,
+    "species": 1302,
+    "item": 729,
+    "moves": [
+      94,
+      188,
+      923,
+      924
+    ],
+    "pp": [
+      10,
+      10,
+      10,
+      5
+    ],
+    "ability": "Heart of Darkness",
+    "carrier_ability_id": 0,
+    "current_ability_index": 0
+  },
+  "frostyrant_regression": {
+    "species": 1301,
+    "ability_id": 77,
+    "ability": "Permafrost"
+  },
+  "format_roundtrip": {
+    "srm_bytes": 131072,
+    "sav_bytes": 131088,
+    "party_pass": true,
+    "pc_pass": true
+  },
+  "browser_patcher": {
+    "base_sha256": "7aa25bbf568f7cfcf6ee1cf2e9e6ff637350b3d0705c2375cabb6baa7d9739f7",
+    "output_sha256": "bdd8ac767412b3c667cac1304c88d786c760100d53dd9873267d7459647f9734",
+    "byte_identical_to_accepted_final": true,
+    "unknown_input_refused": true
+  },
+  "edited_save_sha256": "5a1525ea6c4c6c8eb43942be8b17640587c7677971eeb35fe3d0d7e5cd579e63"
+}

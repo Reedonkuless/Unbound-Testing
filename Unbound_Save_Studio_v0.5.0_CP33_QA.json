@@ -1,0 +1,26 @@
+{
+  "status": "PASS_WITH_CP27_RELEASE_PREREQUISITE",
+  "editor": {
+    "mournevoir_virtual_ability": "Eclipse Heart",
+    "mournevoir_stats": [68,85,65,165,135,100],
+    "items": {"729":"Soul Requiem","730":"Tyrant's Crown"},
+    "moves": {"923":"Glacial Rend","924":"TyrantPrison","925":"Dark Whisper","926":"Fey Bane"},
+    "party_roundtrip": true,
+    "pc_roundtrip": true,
+    "frostyrant_roundtrip": true,
+    "party_pp": {"923":10,"924":5,"925":20,"926":10}
+  },
+  "cp33_browser_overlay_crosscheck": {
+    "qa_compat_input_sha1": "49a70fbfeb01fa6a3c6a163bea63e6c3f9ff9cda",
+    "python_output_sha1": "bf5200076f5908e7e68b8dd4c79c0f7595172fc2",
+    "javascript_output_sha1": "bf5200076f5908e7e68b8dd4c79c0f7595172fc2",
+    "output_sha256": "24e80fbfaeb97662ff9c9ad251167cb1b6d41b1ed27137174484d49504e0e5d1",
+    "byte_identical": true
+  },
+  "latest_patcher_input": {
+    "sha1": "27995aec07b7111645161b4d29698d7d21e55ac9",
+    "sha256": "5a918128ef36a8bd10261cd2d2356c744f8789d2bc48563f5b42fea5a2a9b5e4"
+  },
+  "latest_output_hash": "pending exact CP27 materialization",
+  "production_deployed": false
+}

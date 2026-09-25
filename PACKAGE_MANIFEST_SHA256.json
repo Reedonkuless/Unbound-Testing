@@ -1,0 +1,315 @@
+{
+  "package": "Unbound_Save_Studio_v0.5.0_CP33_Editor_Patcher",
+  "files": [
+    {
+      "path": "CHECKPOINT.md",
+      "bytes": 1908,
+      "sha256": "cbc2c0fe4f408d667fbdebf371755f91317965990a68f336178066995e8b90f6"
+    },
+    {
+      "path": "MANUAL_QA.md",
+      "bytes": 1108,
+      "sha256": "2dbb6e2f1eb8530d9e51f3a071fbc21a320e4dea636c80b63617ea3d6c7f855c"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 1425,
+      "sha256": "89324d12da8ebc210f2056724d80bfc2549363f5489d3dc140999b8330d07e0c"
+    },
+    {
+      "path": "RELEASE_HANDOFF_2026-09-24.md",
+      "bytes": 1377,
+      "sha256": "960ab5a3b1c3b7416f71e7b301e1a1729b8b67661d02e741070aadd4f9e83fef"
+    },
+    {
+      "path": "RELEASE_HANDOFF_2026-09-25.md",
+      "bytes": 1243,
+      "sha256": "6a04e7ec6c1d8f2b417330adf1658329c03121758d1499332fd5c8d7d8ea9134"
+    },
+    {
+      "path": "UPSTREAM_LICENSE.txt",
+      "bytes": 1056,
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    {
+      "path": "Unbound_Save_Studio_v0.5.0_CP33_QA.json",
+      "bytes": 1110,
+      "sha256": "95d2e4c8df2c904321d38afc7983f2db68e495165178c650f16778d725742838"
+    },
+    {
+      "path": "dark.css",
+      "bytes": 3074,
+      "sha256": "da0105eda9f3925e1e3f683b5914b9432c3422acc153ea521a61507592d446c3"
+    },
+    {
+      "path": "data/abilities.txt",
+      "bytes": 3614,
+      "sha256": "ce1bd296d50ac4699c1eda93c2dc7f3088ec60e365c3e930227922ecb7d99edc"
+    },
+    {
+      "path": "data/custom_latest.json",
+      "bytes": 1210,
+      "sha256": "01f89f639e91dc25a57d792f71570e05ddfacd9a710d18c2b80d09acdba715b6"
+    },
+    {
+      "path": "data/items.txt",
+      "bytes": 10367,
+      "sha256": "27e500ad375dd1f4eb9372986fc8f0fb0bddccf85a1b10067f4f886abd46a433"
+    },
+    {
+      "path": "data/move_table_from_rom.json",
+      "bytes": 143671,
+      "sha256": "d5f7b88bc0fdd9947c520233addd6fd19add85acb0f861592896c4fccdefd000"
+    },
+    {
+      "path": "data/moves.txt",
+      "bytes": 13209,
+      "sha256": "0c8fa959defe23ad73ccd6d6c2d33d8a0718b9ad0aad6b0e9eeaa205e5a8089c"
+    },
+    {
+      "path": "data/pokemon.txt",
+      "bytes": 15916,
+      "sha256": "283181fcdaac2525609d33514dd0793dc9aeb4d85e606bf8f1f763d621aa4bdc"
+    },
+    {
+      "path": "data/tms.txt",
+      "bytes": 2979,
+      "sha256": "a4c1750af9db4cdd370795d3609477a2b32cbf4f62d634df71f8081d2dc9a835"
+    },
+    {
+      "path": "index.html",
+      "bytes": 7963,
+      "sha256": "1ee357e22d04ccd9384068d6098317c084f89c1dacdb91505b0fafb73ceb8ca5"
+    },
+    {
+      "path": "legacy-rc6-docs/Unbound_Final_Unified_Patcher_Verification_2026-09-24_RC6.md",
+      "bytes": 1960,
+      "sha256": "a7e00283c884abc798dbef1af4cbd0726f9ab9675988d64dd3cec4146c8f6ad7"
+    },
+    {
+      "path": "legacy-rc6-docs/Unbound_Save_Studio_v0.4.0_RoundTrip_QA.json",
+      "bytes": 1566,
+      "sha256": "1941e7fb7091e8437306ab2077feb1918dbac23432e115ea46f877048fbec1c7"
+    },
+    {
+      "path": "legacy-rc6-docs/Unbound_SoulRequiem_RC6_Static_Audit.json",
+      "bytes": 1621,
+      "sha256": "d563c37cf823e48a4b2c87d7304573063484b92f4a628236d08774389063b00f"
+    },
+    {
+      "path": "legacy-rc6-docs/Unbound_SoulRequiem_RC6_UPF_Audit.json",
+      "bytes": 938,
+      "sha256": "e3e9ce90326593750820ecf089c10d4e614abce16a1ca6248d9c0804277a586f"
+    },
+    {
+      "path": "main.js",
+      "bytes": 22335,
+      "sha256": "380da3485880e44688c668e447d66d6334f4b09a8b215ca812ba32a5cbce4e34"
+    },
+    {
+      "path": "package.json",
+      "bytes": 33,
+      "sha256": "a90fc33418afa2b9cbf4768524b021135b965ecdf993457505bfae3ac44a8428"
+    },
+    {
+      "path": "patch.css",
+      "bytes": 4512,
+      "sha256": "5befd0ca1909c9ae63b3c3d8fe0e5467840d368a78a490b6174239997be60200"
+    },
+    {
+      "path": "rom-patcher/CP33_ASSET_MANIFEST.json",
+      "bytes": 1679,
+      "sha256": "fc476c58694e21fe38e82fae608c4704aad3788e523125ec4cc4eacdccd03180"
+    },
+    {
+      "path": "rom-patcher/README.md",
+      "bytes": 678,
+      "sha256": "5a80bf294d6c9f4f6a7c1c966a9a6347ecb5431f94d8b15b7e4aa286ba990c46"
+    },
+    {
+      "path": "rom-patcher/Unbound_Final_Unified_2026-09-24_RC6.upf",
+      "bytes": 476359,
+      "sha256": "d5a9d25c4bde049b0e2c2e0b2108e5dcbb75b311f1cf4dbe083f49f2b3bfb387"
+    },
+    {
+      "path": "rom-patcher/Unbound_Final_Unified_2026-09-24_RC6.upf.zlib",
+      "bytes": 140794,
+      "sha256": "fe04afe4c9b0147ae67fe292cd541865bbfc2cc45c6b7f60f5ef6d5b78da4b45"
+    },
+    {
+      "path": "rom-patcher/Unbound_Final_Unified_Patcher_Manifest_2026-09-24_RC6.json",
+      "bytes": 1418,
+      "sha256": "fa4b6aa45be4ad6dcfb40d2c624370f5da8b4d527bdac51abf10e5a25d13865e"
+    },
+    {
+      "path": "rom-patcher/assets/dreadchomp_party_icon_32x64.4bpp",
+      "bytes": 1024,
+      "sha256": "8c0a2b2f70dff4cb2b493728ff8d2fcb15d7ce7c5782e11a6d5a7b046afc85d8"
+    },
+    {
+      "path": "rom-patcher/assets/frostyrant_party_icon_32x64.4bpp",
+      "bytes": 1024,
+      "sha256": "836ab7b378becf4c8b758d55195b8aa4a8d6a20f81008216d84c2553dae6acdb"
+    },
+    {
+      "path": "rom-patcher/assets/frozen_sovereignty_final.bin",
+      "bytes": 128,
+      "sha256": "0c25843a68bc62b285c05e1f1ed0c8d9723702109b4d4e1764f1b3e6e0d9d3a7"
+    },
+    {
+      "path": "rom-patcher/assets/frozen_sovereignty_final.s",
+      "bytes": 1517,
+      "sha256": "7c3cb75225b359eed1587093aae5b828f91386522b3d2d75be07a9db1405c1b7"
+    },
+    {
+      "path": "rom-patcher/assets/gravibite_party_icon_32x64.4bpp",
+      "bytes": 1024,
+      "sha256": "44c8dd2c732e04700dcf5e5f0d6f0340d63e4464255a8fd782b8a9770ed2fcab"
+    },
+    {
+      "path": "rom-patcher/assets/grimble_party_icon_32x64.4bpp",
+      "bytes": 1024,
+      "sha256": "50ec2cf6c5c45c146ffb47a4037af3aa4c52c47679ddb6f4699b107504ae8fc2"
+    },
+    {
+      "path": "rom-patcher/assets/mournevoir_party_icon_32x64.4bpp",
+      "bytes": 1024,
+      "sha256": "bc5f7cf834dc2010fd0b6431af8dbdf507de81bc74eefc09f1576c82c7fb0963"
+    },
+    {
+      "path": "rom-patcher/assets/party_icon_palette_slot3.gbapal",
+      "bytes": 32,
+      "sha256": "cb0d959afd86b79a701ccd78f0890e2a3595e2829bc63347ad3a3ba58059e9ef"
+    },
+    {
+      "path": "rom-patcher/assets/party_icon_palette_slot4.gbapal",
+      "bytes": 32,
+      "sha256": "d628601c8e841a57339d0d0e8b2707aec4a1cc8f6892471dd0412ca26e7f5543"
+    },
+    {
+      "path": "rom-patcher/assets/party_icon_palette_slot5.gbapal",
+      "bytes": 32,
+      "sha256": "1f22f243b390cbf33faf5efd39bd647fcd627ae04977bdaefdbbcd04ea703f08"
+    },
+    {
+      "path": "rom-patcher/cp33-overlay.js",
+      "bytes": 7757,
+      "sha256": "5a9c09e167b5fa20aed9d9031bcb08784fab245ba50c7700c35dd755d7aa87a8"
+    },
+    {
+      "path": "rom-patcher/index.html",
+      "bytes": 5518,
+      "sha256": "939a4820bb9ce72177f753e47b6cff565e7c7311c821065934cdc5a55cc51778"
+    },
+    {
+      "path": "rom-patcher/legacy-rc6.html",
+      "bytes": 8547,
+      "sha256": "4481fadacf8863a1db1c0fe593cff4afdcb83aaaf2e4958f33cefc705ca5615a"
+    },
+    {
+      "path": "rom-patcher/upf.js",
+      "bytes": 2532,
+      "sha256": "802bd1f0146524ba6e3e02d3d97c04aa4f7c0c56a6d117d3ef1a76ae808f919a"
+    },
+    {
+      "path": "src/puse/abilitiesCatalog.json.js",
+      "bytes": 4646,
+      "sha256": "e8c2a3859f3feeaaadfa84a6402fe74e72c6ce5b0dee4bf37a452f0eca9276e9"
+    },
+    {
+      "path": "src/puse/balls.js",
+      "bytes": 2236,
+      "sha256": "288a7ce608ee1713cbec1c5a922f179f7135455c02269039a0861fdedd510c7a"
+    },
+    {
+      "path": "src/puse/battlePreview.js",
+      "bytes": 3244,
+      "sha256": "9663d25d49e5f57d76274de0d1f2ab208669a317e6dd3315570474143899b148"
+    },
+    {
+      "path": "src/puse/binary.js",
+      "bytes": 1216,
+      "sha256": "44a911a825614828508eb751f3302b50a12b4f78cbef0d8f83fca52901ceee23"
+    },
+    {
+      "path": "src/puse/catalog.js",
+      "bytes": 5879,
+      "sha256": "5d4a96058f66396f10de71c94eadbae2bcda609bdc829d1a60e28398a213ac16"
+    },
+    {
+      "path": "src/puse/checksum.js",
+      "bytes": 2730,
+      "sha256": "dc98f8d1f3cd326af8daf9fe8da32542a38a15c04678816011ff86b453cd9fad"
+    },
+    {
+      "path": "src/puse/commit.js",
+      "bytes": 740,
+      "sha256": "fdd3dd5f967dfd8041295d3de602f19675ce458ebf09cf61301cb5c2bbc3b56d"
+    },
+    {
+      "path": "src/puse/growth.js",
+      "bytes": 1875,
+      "sha256": "3470c267d85579f7ecf9d907c53ac42c9c09aca8b577330ce5d609abfb3af76f"
+    },
+    {
+      "path": "src/puse/party.js",
+      "bytes": 35356,
+      "sha256": "8e21550e8112af4f26e5a1d8d0435c31b94ce37e2709074b82d7797fdc457d67"
+    },
+    {
+      "path": "src/puse/pc.js",
+      "bytes": 50082,
+      "sha256": "7e5cadbdb39f3991e1850aa48ef1c9708d1451459abae17999a8fa9d494d4072"
+    },
+    {
+      "path": "src/puse/saveConvert.js",
+      "bytes": 1340,
+      "sha256": "7b85c6581971e8cb67198614af9f7aff7a2ac87698939c9fe8035b7d8a6b6b86"
+    },
+    {
+      "path": "src/puse/sections.js",
+      "bytes": 1225,
+      "sha256": "e8f3317bba61265aa0d5260183295adc807c95b1fbe3e5a9779c0a9acf89bcb8"
+    },
+    {
+      "path": "src/puse/speciesAbilitiesMeta.json.js",
+      "bytes": 85546,
+      "sha256": "2615a9ef8b4a56cdb9b904c5cf9c617dae0bccdfe0f10e3d3698082fc2a98e22"
+    },
+    {
+      "path": "src/puse/speciesBaseStats.json.js",
+      "bytes": 79097,
+      "sha256": "3c8688b1eb978c964e74a01b915066ef2906ba0667b24d8d962c2c4851c10160"
+    },
+    {
+      "path": "src/puse/speciesFormAliases.json.js",
+      "bytes": 22543,
+      "sha256": "afcbe0d9482a3656dcc6930b6657853fe682cdcc77cc8aa46e49e0aa0e445bd9"
+    },
+    {
+      "path": "src/puse/speciesForms.js",
+      "bytes": 1940,
+      "sha256": "a9368046109769d1dedd38b294473a915a130a2c022ef551a16d3d5ca03967bb"
+    },
+    {
+      "path": "src/puse/speciesGrowthRates.json.js",
+      "bytes": 30711,
+      "sha256": "40eb28ac3f7b2bc0d6ca91561fd4237ffe432e4dc9501d537f8433df7ff9ec89"
+    },
+    {
+      "path": "src/puse/speciesIdentityMeta.json.js",
+      "bytes": 39325,
+      "sha256": "f23b70858b2bd036db8aa6c850ae795b037d6709235d1eda0f68f45e7223053a"
+    },
+    {
+      "path": "style.css",
+      "bytes": 9754,
+      "sha256": "aa4db095c183b6a85566e766c9a01559b4d7f5443c47ee6bd8c51b71e367e67c"
+    },
+    {
+      "path": "vercel.json",
+      "bytes": 257,
+      "sha256": "431e68d1516649935b45ca3c8e16f62165189d6b04dbfed1b9be0405a17f671a"
+    }
+  ]
+}

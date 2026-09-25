@@ -1,0 +1,54 @@
+{
+  "cp33_patcher_assets": [
+    {
+      "name": "dreadchomp_party_icon_32x64.4bpp",
+      "bytes": 1024,
+      "sha256": "8c0a2b2f70dff4cb2b493728ff8d2fcb15d7ce7c5782e11a6d5a7b046afc85d8"
+    },
+    {
+      "name": "frostyrant_party_icon_32x64.4bpp",
+      "bytes": 1024,
+      "sha256": "836ab7b378becf4c8b758d55195b8aa4a8d6a20f81008216d84c2553dae6acdb"
+    },
+    {
+      "name": "frozen_sovereignty_final.bin",
+      "bytes": 128,
+      "sha256": "0c25843a68bc62b285c05e1f1ed0c8d9723702109b4d4e1764f1b3e6e0d9d3a7"
+    },
+    {
+      "name": "frozen_sovereignty_final.s",
+      "bytes": 1517,
+      "sha256": "7c3cb75225b359eed1587093aae5b828f91386522b3d2d75be07a9db1405c1b7"
+    },
+    {
+      "name": "gravibite_party_icon_32x64.4bpp",
+      "bytes": 1024,
+      "sha256": "44c8dd2c732e04700dcf5e5f0d6f0340d63e4464255a8fd782b8a9770ed2fcab"
+    },
+    {
+      "name": "grimble_party_icon_32x64.4bpp",
+      "bytes": 1024,
+      "sha256": "50ec2cf6c5c45c146ffb47a4037af3aa4c52c47679ddb6f4699b107504ae8fc2"
+    },
+    {
+      "name": "mournevoir_party_icon_32x64.4bpp",
+      "bytes": 1024,
+      "sha256": "bc5f7cf834dc2010fd0b6431af8dbdf507de81bc74eefc09f1576c82c7fb0963"
+    },
+    {
+      "name": "party_icon_palette_slot3.gbapal",
+      "bytes": 32,
+      "sha256": "cb0d959afd86b79a701ccd78f0890e2a3595e2829bc63347ad3a3ba58059e9ef"
+    },
+    {
+      "name": "party_icon_palette_slot4.gbapal",
+      "bytes": 32,
+      "sha256": "d628601c8e841a57339d0d0e8b2707aec4a1cc8f6892471dd0412ca26e7f5543"
+    },
+    {
+      "name": "party_icon_palette_slot5.gbapal",
+      "bytes": 32,
+      "sha256": "1f22f243b390cbf33faf5efd39bd647fcd627ae04977bdaefdbbcd04ea703f08"
+    }
+  ]
+}

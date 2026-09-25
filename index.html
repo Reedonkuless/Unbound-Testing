@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#142d29">
+  <meta name="description" content="Pokémon Unbound Save Studio v0.5.0 CP33 editor for the latest custom species, moves, abilities, and items.">
+  <title>Pokémon Unbound Save Studio v0.5.0</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./patch.css">
+  <link rel="stylesheet" href="./dark.css">
+  <script type="module" src="./main.js"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">U</span><div><span class="eyebrow">POKÉMON UNBOUND</span><strong>Save Studio</strong></div></div>
+      <div class="top-actions"><a class="patcher-link" href="/rom-patcher/">Unified ROM Patcher</a><span class="version">v0.5.0 · CP33 · 2.1.1.1</span></div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <span class="section-kicker">CREATE + EDIT</span>
+          <h1 id="page-title">Build the party you want.</h1>
+          <p>Edit an owned Pokémon's species or create a new Pokémon directly in your Party or an empty PC slot, then export a checksum-corrected copy.</p>
+          <div class="hero-pills"><span>Species editing</span><span>Searchable fields</span><span>Unified custom data</span></div>
+        </div>
+        <div class="orb" aria-hidden="true"><span></span></div>
+      </section>
+
+      <section class="upload-panel" aria-labelledby="upload-title">
+        <div class="section-head"><div><span class="section-kicker">01 / OPEN</span><h2 id="upload-title">Choose a save file</h2></div><span class="private-note">Processed in your browser</span></div>
+        <label class="dropzone" for="save-file"><span class="upload-icon" aria-hidden="true">↑</span><strong>Tap to select a .sav or .srm</strong><small>Unbound v2.1.1.1 · 128 KiB save · Your original is never changed</small></label>
+        <input id="save-file" type="file" accept=".sav,.srm,application/octet-stream" hidden>
+        <p class="file-caption" id="file-caption">No save loaded</p>
+      </section>
+
+      <section id="workspace" class="workspace" hidden aria-labelledby="workspace-title">
+        <div class="section-head workspace-head">
+          <div><span class="section-kicker">02 / EDIT</span><h2 id="workspace-title">Your Pokémon</h2></div>
+          <div class="workspace-actions"><span id="edit-count" class="edit-count">No edits yet</span><button id="add-mon" class="secondary-button compact" type="button">+ Add Pokémon</button></div>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Storage"><button id="party-tab" class="tab active" type="button" role="tab" aria-selected="true">Party</button><button id="pc-tab" class="tab" type="button" role="tab" aria-selected="false">PC Boxes</button></div>
+        <div id="box-controls" class="box-controls" hidden><label for="box-select">Box</label><select id="box-select"></select><span id="box-count"></span></div>
+
+        <form id="creator" class="creator" hidden>
+          <div class="creator-head"><div><span class="section-kicker">NEW POKÉMON</span><h3>Create a Pokémon</h3><p id="creator-location"></p></div><button id="close-creator" class="icon-button" type="button" aria-label="Close creator">×</button></div>
+          <div class="creator-body">
+            <label>Species<input class="search-field" id="search-create-species" type="search" placeholder="Search name or ID" autocomplete="off"><select id="create-species"></select></label>
+            <label>Level<input id="create-level" type="number" min="1" max="100" value="5" inputmode="numeric"></label>
+            <p class="creator-note">New Pokémon start with Hardy nature, no held item, 31 IVs, 0 EVs, and empty move slots. You can immediately edit all supported fields after creation.</p>
+          </div>
+          <div class="creator-actions"><button id="create-mon" class="primary-button" type="submit">Create Pokémon</button><button id="cancel-create" class="secondary-button" type="button">Cancel</button></div>
+        </form>
+
+        <div id="mon-list" class="mon-list" aria-live="polite"></div>
+        <p id="empty-list" class="empty-list" hidden>No Pokémon found here. Choose another box or add one.</p>
+
+        <form id="editor" class="editor" hidden>
+          <div class="editor-header"><div><span class="section-kicker">SELECTED POKÉMON</span><h3 id="editor-name"></h3><p id="editor-location"></p></div><button id="close-editor" class="icon-button" type="button" aria-label="Close editor">×</button></div>
+          <div class="editor-body">
+            <label class="full-label first-field">Species<input class="search-field" id="search-species" type="search" placeholder="Search name or ID" autocomplete="off"><select id="species" name="species"></select></label>
+            <div class="form-grid basic-grid"><label>Nature<select id="nature" name="nature"></select></label><label>Ability<select id="ability" name="ability"></select></label><label>Held item<input class="search-field" id="search-item" type="search" placeholder="Search item or ID" autocomplete="off"><select id="item" name="item"></select></label></div>
+            <div class="identity-row"><label class="toggle-label"><input id="shiny" type="checkbox" name="shiny"><span class="toggle-track"></span><span>Shiny</span></label><label>Gender<select id="gender" name="gender"></select></label></div>
+            <fieldset><legend>Moves <small>Choose up to four</small></legend><div class="moves-grid"><label>Move 1<input class="search-field" id="search-move-0" type="search" placeholder="Search move or ID" autocomplete="off"><select id="move-0" name="move-0"></select></label><label>Move 2<input class="search-field" id="search-move-1" type="search" placeholder="Search move or ID" autocomplete="off"><select id="move-1" name="move-1"></select></label><label>Move 3<input class="search-field" id="search-move-2" type="search" placeholder="Search move or ID" autocomplete="off"><select id="move-2" name="move-2"></select></label><label>Move 4<input class="search-field" id="search-move-3" type="search" placeholder="Search move or ID" autocomplete="off"><select id="move-3" name="move-3"></select></label></div></fieldset>
+            <fieldset><legend>IVs <small>0–31 each</small></legend><div id="iv-grid" class="stat-grid"></div></fieldset>
+            <fieldset><legend>EVs <small>0–252 each · 510 total</small></legend><div id="ev-grid" class="stat-grid"></div></fieldset>
+          </div>
+          <div class="editor-actions"><button id="apply-edit" class="primary-button" type="submit">Save Pokémon changes</button></div>
+        </form>
+      </section>
+
+      <section id="export-panel" class="export-panel" hidden aria-labelledby="export-title"><div><span class="section-kicker">03 / EXPORT</span><h2 id="export-title">Ready to play?</h2><p>Download a new file. Keep your original as a backup before replacing the emulator’s save.</p></div><div class="export-actions"><button id="export-sav" class="primary-button" type="button">Download .sav</button><button id="export-srm" class="secondary-button" type="button">Download .srm</button></div></section>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+    </main>
+
+    <footer><p>v0.5.0 CP33 editor build. Save parsing and checksum logic are adapted from <a href="https://github.com/Zannael/PUSE" target="_blank" rel="noopener noreferrer">PUSE by Zannael</a> under its MIT license.</p><p>The editor works on local copies. The latest CP33 ROM overlay requires the exact CP27 prerequisite; the legacy RC6 clean-base patch remains available separately. Keep backups of your original ROM and save.</p></footer>
+  </div>
+</body>
+</html>

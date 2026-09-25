@@ -1,0 +1,38 @@
+{
+  "format": "UPF1 deterministic binary patch",
+  "release_state": "v0.4.0 Unified RC6 Soul Requiem presentation candidate",
+  "input": {
+    "name": "Pokemon Unbound (v2.1.1.1).gba",
+    "bytes": 33554432,
+    "sha1": "b4776b82a4c7915d0fadeaa27e013523f99dfd94",
+    "sha256": "7aa25bbf568f7cfcf6ee1cf2e9e6ff637350b3d0705c2375cabb6baa7d9739f7"
+  },
+  "output": {
+    "name": "Pokemon Unbound - Unified Custom Final.gba",
+    "bytes": 33554432,
+    "sha1": "15b818eb3b6028100cc7eebc68e72a44bf96f7af",
+    "sha256": "fcefa1341858363be236e57cd4b1bfcd725dc4ec67261ecdf3e37ac22d3a2c0e"
+  },
+  "patch": {
+    "payload": "Unbound_Final_Unified_2026-09-24_RC6.upf",
+    "payload_bytes": 476359,
+    "payload_sha256": "d5a9d25c4bde049b0e2c2e0b2108e5dcbb75b311f1cf4dbe083f49f2b3bfb387",
+    "record_count": 769,
+    "physical_changed_bytes": 453544,
+    "covered_bytes_in_merged_records": 470195,
+    "merge_gap_max_bytes": 32
+  },
+  "gameplay_fixes": [
+    "Permafrost summary description one-line fit",
+    "Approved 32x32 party icons for species 1298-1301",
+    "Soul Requiem item 729 summary-name resolver",
+    "Soul Requiem uses native Soul Dew item 191 graphics and palette without recolor"
+  ],
+  "guards": {
+    "exact_input_sha1_and_sha256_required": true,
+    "exact_payload_sha256_required": true,
+    "exact_output_sha1_and_sha256_required": true,
+    "unknown_input_refused": true,
+    "rom_bundled": false
+  }
+}
