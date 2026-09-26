@@ -56,7 +56,7 @@ Expected output SHA-256:<br>
   var TARGET_SHA1 = '1037b82bd50a4cad4d3fa63316da79f403e0e7d1';
   var TARGET_SHA256 = '9c52a435a7159a721bf6fd532fa03e4bb435ddf4956b6a5c6c14a83e92ac288f';
   var PAYLOAD_SHA256 = '82a7887b91db41ff7402cd0c92e1c23ca9e1c0548940ea250fa92a12201ee33e';
-  var PAYLOAD_URL = './Unbound_Latest_Recovered_CP33_2026-09-26.upf?inline-ios=1';
+  var PAYLOAD_URL = '/rom-patcher/Unbound_Latest_Recovered_CP33_2026-09-26.upf?inline-ios=2';
 
   var input = document.getElementById('rom');
   var choose = document.getElementById('choose-rom');
