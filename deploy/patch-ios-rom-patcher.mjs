@@ -8,6 +8,11 @@ if (!moduleBlock.test(html)) throw new Error('ROM patcher module block not found
 html = html.replace(moduleBlock, '<script src="./upf.js"></script>\n<script src="./patcher.js"></script>');
 
 html = html.replace(
+  '<p>Your original ROM stays local in the browser. No ROM is uploaded or bundled.</p>',
+  '<p>Your original ROM stays local in the browser. No ROM is uploaded or bundled.</p><p style="padding:12px 14px;border:1px solid #8ac99b;border-radius:12px"><strong>iPhone/iPad:</strong> this patcher must run in Safari. If you opened it inside ChatGPT or another in-app browser, tap the compass / Open in Safari button first. If the status below never changes to <em>JavaScript active</em>, the current browser is blocking the patcher.</p>'
+);
+
+html = html.replace(
   '<strong>Select exact Unbound v2.1.1.1 ROM</strong>',
   '<strong>Choose ROM &amp; patch automatically</strong>'
 );
@@ -21,7 +26,7 @@ html = html.replace(
 );
 html = html.replace(
   '<p id="status" role="status" aria-live="polite">Waiting for original ROM.</p>',
-  '<p id="status" role="status" aria-live="polite">Choose the original ROM. Patching starts automatically after selection.</p>'
+  '<p id="status" role="status" aria-live="polite">JavaScript inactive. On iPhone, tap the compass / Open in Safari button, then reload this page.</p>'
 );
 
 writeFileSync(htmlPath, html);
@@ -173,7 +178,7 @@ writeFileSync('dist/rom-patcher/patcher.js', String.raw`(function () {
   };
 
   byId('patch-rom').disabled = false;
-  setStatus('Ready. Tap Choose ROM & Patch; patching starts as soon as iOS returns the file.');
+  setStatus('JavaScript active. Tap Choose ROM & Patch; patching starts as soon as iOS returns the file.');
 })();
 `);
 
