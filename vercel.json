@@ -1,5 +1,5 @@
 {
-  "buildCommand": "node deploy/verify-package.mjs && rm -rf dist && mkdir -p dist && unzip -q deploy/Unbound_Save_Studio_v0.5.1_Recovered_CP33_CleanBase.zip -d dist && node deploy/patch-index.mjs && node deploy/patch-ios-rom-patcher.mjs",
+  "buildCommand": "node deploy/verify-package.mjs && rm -rf dist && mkdir -p dist && unzip -q deploy/Unbound_Save_Studio_v0.5.1_Recovered_CP33_CleanBase.zip -d dist && node deploy/patch-index.mjs && node deploy/patch-ios-inline-patcher.mjs",
   "outputDirectory": "dist",
   "cleanUrls": false,
   "trailingSlash": false,
@@ -8,7 +8,8 @@
       "source": "/(.*)",
       "headers": [
         {"key": "X-Content-Type-Options", "value": "nosniff"},
-        {"key": "Referrer-Policy", "value": "no-referrer"}
+        {"key": "Referrer-Policy", "value": "no-referrer"},
+        {"key": "Cache-Control", "value": "no-store"}
       ]
     }
   ]
