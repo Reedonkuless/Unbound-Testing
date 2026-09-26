@@ -2,9 +2,28 @@ import { readFileSync, writeFileSync } from 'node:fs';
 
 const htmlPath = 'dist/rom-patcher/index.html';
 let html = readFileSync(htmlPath, 'utf8');
+
 const moduleBlock = /<script type="module">[\s\S]*?<\/script>/;
 if (!moduleBlock.test(html)) throw new Error('ROM patcher module block not found');
 html = html.replace(moduleBlock, '<script src="./upf.js"></script>\n<script src="./patcher.js"></script>');
+
+html = html.replace(
+  '<strong>Select exact Unbound v2.1.1.1 ROM</strong>',
+  '<strong>Choose ROM &amp; patch automatically</strong>'
+);
+html = html.replace(
+  '<input id="rom" type="file" accept=".gba,application/octet-stream">',
+  '<input id="rom" type="file" accept=".gba,application/octet-stream" onchange="window.UnboundDirectPatch(this)">'
+);
+html = html.replace(
+  '<button id="patch-rom" class="primary-button" type="button" disabled>Patch ROM</button>',
+  '<button id="patch-rom" class="primary-button" type="button" onclick="document.getElementById(\'rom\').click()">Choose ROM &amp; Patch</button>'
+);
+html = html.replace(
+  '<p id="status" role="status" aria-live="polite">Waiting for original ROM.</p>',
+  '<p id="status" role="status" aria-live="polite">Choose the original ROM. Patching starts automatically after selection.</p>'
+);
+
 writeFileSync(htmlPath, html);
 
 writeFileSync('dist/rom-patcher/upf.js', String.raw`(function (global) {
@@ -17,6 +36,7 @@ writeFileSync('dist/rom-patcher/upf.js', String.raw`(function (global) {
   var RAW_PAYLOAD_SHA256 = '82a7887b91db41ff7402cd0c92e1c23ca9e1c0548940ea250fa92a12201ee33e';
 
   async function digest(bytes, algorithm) {
+    if (!global.crypto || !global.crypto.subtle) throw new Error('This browser does not provide Web Crypto. Open the patcher in Safari.');
     var result = await global.crypto.subtle.digest(algorithm, bytes);
     var a = new Uint8Array(result);
     var out = '';
@@ -66,63 +86,26 @@ writeFileSync('dist/rom-patcher/upf.js', String.raw`(function (global) {
 writeFileSync('dist/rom-patcher/patcher.js', String.raw`(function () {
   'use strict';
 
-  function byId(id) { return document.getElementById(id); }
-  var input = byId('rom');
-  var button = byId('patch-rom');
-  var download = byId('download-rom');
-  var selection = byId('selection');
-  var status = byId('status');
   var outputUrl = null;
-  var lastSignature = '';
+  var busy = false;
+
+  function byId(id) { return document.getElementById(id); }
 
   function setStatus(text, isError) {
+    var status = byId('status');
     status.textContent = text;
     if (isError) status.classList.add('error');
     else status.classList.remove('error');
   }
 
   function clearOutput() {
+    var download = byId('download-rom');
     if (outputUrl) {
       URL.revokeObjectURL(outputUrl);
       outputUrl = null;
     }
     download.hidden = true;
     download.removeAttribute('href');
-  }
-
-  function getSelectedFile() {
-    try {
-      return input.files && input.files.length ? input.files[0] : null;
-    } catch (e) {
-      return null;
-    }
-  }
-
-  function syncSelection(force) {
-    var file = getSelectedFile();
-    var signature = file ? (file.name + '|' + file.size + '|' + file.lastModified) : '';
-    if (!force && signature === lastSignature) return;
-    lastSignature = signature;
-    clearOutput();
-
-    if (!file) {
-      selection.textContent = 'No ROM selected.';
-      button.disabled = true;
-      setStatus('Waiting for original ROM.');
-      return;
-    }
-
-    selection.textContent = file.name + ' · ' + file.size.toLocaleString() + ' bytes';
-    if (!window.UnboundPatcher) {
-      button.disabled = true;
-      setStatus('Patcher engine did not initialize. Reload this page and try again.', true);
-      return;
-    }
-
-    var validSize = file.size === window.UnboundPatcher.ROM_SIZE;
-    button.disabled = !validSize;
-    if (validSize) setStatus('ROM selected. Tap Patch ROM to verify it.');
-    else setStatus('ROM size is not 33,554,432 bytes.', true);
   }
 
   function readFile(file) {
@@ -134,60 +117,64 @@ writeFileSync('dist/rom-patcher/patcher.js', String.raw`(function () {
     });
   }
 
-  input.addEventListener('change', function () { syncSelection(true); });
-  input.addEventListener('input', function () { syncSelection(true); });
-  window.addEventListener('focus', function () { setTimeout(function () { syncSelection(true); }, 150); });
-  document.addEventListener('visibilitychange', function () {
-    if (!document.hidden) setTimeout(function () { syncSelection(true); }, 150);
-  });
+  window.UnboundDirectPatch = async function (input) {
+    if (busy) return;
 
-  var poll = setInterval(function () {
-    if (!document.hidden) syncSelection(false);
-  }, 500);
+    var file = null;
+    try {
+      file = input && input.files && input.files.length ? input.files[0] : null;
+    } catch (e) {
+      file = null;
+    }
 
-  button.addEventListener('click', async function () {
-    var file = getSelectedFile();
     if (!file) {
-      syncSelection(true);
+      setStatus('iOS returned without a readable file. Tap Choose ROM & Patch and select the .gba again.', true);
       return;
     }
 
+    busy = true;
     clearOutput();
+
+    var selection = byId('selection');
+    var button = byId('patch-rom');
+    selection.textContent = file.name + ' · ' + file.size.toLocaleString() + ' bytes';
     button.disabled = true;
-    input.disabled = true;
 
     try {
+      if (!window.UnboundPatcher) throw new Error('Patcher engine did not initialize. Open this page directly in Safari and reload once.');
+
+      if (file.size !== window.UnboundPatcher.ROM_SIZE) {
+        throw new Error('ROM size is not 33,554,432 bytes.');
+      }
+
       setStatus('Reading original ROM…');
       var source = await readFile(file);
 
       setStatus('Loading recovered CP33 payload…');
-      var response = await fetch('./Unbound_Latest_Recovered_CP33_2026-09-26.upf', { cache: 'no-store' });
+      var response = await fetch('./Unbound_Latest_Recovered_CP33_2026-09-26.upf?ios=direct2', { cache: 'no-store' });
       if (!response.ok) throw new Error('Patch payload could not be loaded (HTTP ' + response.status + ').');
       var payload = new Uint8Array(await response.arrayBuffer());
 
-      setStatus('Verifying and applying patch…');
+      setStatus('Verifying clean ROM and applying recovered CP33 patch…');
       var out = await window.UnboundPatcher.applyUnifiedPatch(source, payload);
 
       outputUrl = URL.createObjectURL(new Blob([out], { type: 'application/octet-stream' }));
+      var download = byId('download-rom');
       download.href = outputUrl;
       download.hidden = false;
-      setStatus('PASS — latest recovered CP33 ROM generated and hash-verified.');
+      setStatus('PASS — patched ROM generated and hash-verified. Tap Download patched ROM.');
     } catch (e) {
       setStatus(e && e.message ? e.message : String(e), true);
     } finally {
-      input.disabled = false;
-      syncSelection(true);
+      busy = false;
+      button.disabled = false;
+      try { input.value = ''; } catch (e) {}
     }
-  });
+  };
 
-  window.addEventListener('pagehide', function () {
-    clearInterval(poll);
-    clearOutput();
-  });
-
-  setStatus('Patcher ready. Select the original ROM.');
-  syncSelection(true);
+  byId('patch-rom').disabled = false;
+  setStatus('Ready. Tap Choose ROM & Patch; patching starts as soon as iOS returns the file.');
 })();
 `);
 
-console.log('PASS iOS-safe classic ROM patcher installed');
+console.log('PASS iOS direct-callback ROM patcher installed');
