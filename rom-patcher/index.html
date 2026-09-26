@@ -11,31 +11,146 @@
 <body>
   <main class="patch-shell">
     <div class="patch-card">
-      <span class="eyebrow">LATEST DESIGN · CHECKPOINT 33</span>
-      <h1>Pokémon Unbound CP33 overlay</h1>
-      <p>Applies the current CP33 item and presentation layer to the exact Checkpoint-27 Mournevoir prerequisite: mixed-case custom species names, five approved two-frame party icons, Soul Requiem, Tyrant's Crown with the native Relic Crown artwork, expanded item accessors, and Frozen Sovereignty.</p>
-      <p><strong>Important:</strong> this latest patcher currently requires the exact CP27 prerequisite ROM, not the clean Unbound base. The clean-base → CP27 payload was not retained, so the patcher will refuse every other ROM rather than silently build an incomplete version.</p>
+      <span class="eyebrow">CHECKPOINT 33 · CLEAN-BASE ENTRY</span>
+      <h1>Pokémon Unbound CP33 ROM patcher</h1>
+      <p>Select an untouched Pokémon Unbound v2.1.1.1 ROM. The patcher verifies the original ROM, applies the exact retained unified RC6 payload, then applies the CP33 item/presentation layer in your browser.</p>
+      <p><strong>Compatibility note:</strong> the exact clean-base → CP27 Mournevoir-redesign payload was not retained. Therefore the clean-base path is a deterministic CP33 <em>compatibility</em> build on the verified RC6 gameplay branch; it does not falsely claim the missing CP27 redesign bytes. If you supply the exact CP27 prerequisite instead, the patcher applies the CP33 overlay directly to that full redesign build.</p>
 
-      <label class="dropzone" for="rom"><strong>Select exact CP27 prerequisite ROM</strong><span>32 MiB .gba · SHA-1 starts 27995aec…</span><input id="rom" type="file" accept=".gba,application/octet-stream"></label>
+      <label class="dropzone" for="rom">
+        <strong>Select Pokémon Unbound v2.1.1.1 ROM</strong>
+        <span>32 MiB .gba · clean SHA-1 starts b4776b82…</span>
+        <input id="rom" type="file" accept=".gba,application/octet-stream">
+      </label>
       <p id="selection" class="patch-selection">No ROM selected.</p>
-      <div class="patch-actions"><button id="patch-rom" class="primary-button" type="button" disabled>Build CP33 ROM</button><a id="download-rom" class="primary-button patch-download" href="#" download="Pokemon Unbound - CP33 Latest.gba" hidden>Download CP33 ROM</a></div>
-      <p id="status" role="status" aria-live="polite">Waiting for CP27 prerequisite ROM.</p>
+      <div class="patch-actions">
+        <button id="patch-rom" class="primary-button" type="button" disabled>Build patched ROM</button>
+        <a id="download-rom" class="primary-button patch-download" href="#" download="Pokemon Unbound - CP33 Patched.gba" hidden>Download patched ROM</a>
+      </div>
+
+      <p id="status" role="status" aria-live="polite">Waiting for original ROM.</p>
       <p id="output-hash" class="hash-note" hidden></p>
-      <p class="patch-note">The final CP33 output hash is reported after generation. It is not pre-certified until the exact CP27 bytes are recovered and archived. Your ROM remains local in the browser.</p>
-      <p><a href="./legacy-rc6.html">Need the older clean-base RC6 patcher?</a></p>
+      <p class="patch-note">Your ROM never leaves the browser. The clean-base compatibility output is hash-verified after generation.</p>
+      <p><a href="./legacy-rc6.html">Open historical RC6-only patcher</a></p>
       <p><a href="../">Back to Save Studio</a></p>
     </div>
   </main>
+
 <script type="module">
 import {ROM_SIZE,CP27_SHA1,CP27_SHA256,applyCp33Overlay,sha1,sha256} from './cp33-overlay.js';
-const $=id=>document.getElementById(id),input=$('rom'),button=$('patch-rom'),download=$('download-rom'),selection=$('selection'),status=$('status'),hashBox=$('output-hash');let outputUrl=null;
+import {SOURCE_SHA1,SOURCE_SHA256,applyUnifiedPatch} from './upf.js';
+
+const CLEAN_COMPAT_SHA1='672d80865481cbe6531e7921b3e13f0126522205';
+const CLEAN_COMPAT_SHA256='72f6184dc282c430f199e1781aa8ed10a2cd86a13753c931e331b260550b3cd3';
+
+const $=id=>document.getElementById(id);
+const input=$('rom'),button=$('patch-rom'),download=$('download-rom'),selection=$('selection'),status=$('status'),hashBox=$('output-hash');
+let outputUrl=null;
+
 function setStatus(t,e=false){status.textContent=t;status.classList.toggle('error',e)}
-function clearOutput(){if(outputUrl){URL.revokeObjectURL(outputUrl);outputUrl=null}download.hidden=true;download.removeAttribute('href');hashBox.hidden=true;hashBox.textContent=''}
-function readFile(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(new Uint8Array(r.result));r.onerror=()=>reject(r.error||new Error('File could not be read.'));r.readAsArrayBuffer(file)})}
-async function fetchAsset(name){const r=await fetch('./assets/'+name,{cache:'no-store'});if(!r.ok)throw new Error('Required CP33 asset could not be loaded: '+name);return new Uint8Array(await r.arrayBuffer())}
-async function loadAssets(){const names=['grimble_party_icon_32x64.4bpp','gravibite_party_icon_32x64.4bpp','dreadchomp_party_icon_32x64.4bpp','frostyrant_party_icon_32x64.4bpp','mournevoir_party_icon_32x64.4bpp','party_icon_palette_slot3.gbapal','party_icon_palette_slot4.gbapal','party_icon_palette_slot5.gbapal'];const values=await Promise.all(names.map(fetchAsset));const a={};names.forEach((n,i)=>a[n]=values[i]);a.wrapper=await fetchAsset('frozen_sovereignty_final.bin');return a}
-input.addEventListener('change',()=>{clearOutput();const f=input.files?.[0];if(!f){selection.textContent='No ROM selected.';button.disabled=true;setStatus('Waiting for CP27 prerequisite ROM.');return}selection.textContent=`${f.name} · ${f.size.toLocaleString()} bytes`;button.disabled=false;setStatus(f.size===ROM_SIZE?'ROM selected. Tap Build CP33 ROM to verify it.':'ROM size is not 33,554,432 bytes.',f.size!==ROM_SIZE)});
-button.addEventListener('click',async()=>{const f=input.files?.[0];if(!f)return;clearOutput();button.disabled=true;input.disabled=true;try{setStatus('Reading prerequisite ROM…');const src=await readFile(f);if(src.length!==ROM_SIZE)throw new Error(`Expected ${ROM_SIZE.toLocaleString()} bytes; got ${src.length.toLocaleString()}.`);setStatus('Verifying CP27 SHA-1…');const s1=await sha1(src);setStatus('Verifying CP27 SHA-256…');const s256=await sha256(src);if(s1!==CP27_SHA1||s256!==CP27_SHA256)throw new Error('This is not the exact CP27 prerequisite ROM. Latest CP33 generation was stopped.');setStatus('Loading CP33 assets…');const assets=await loadAssets();setStatus('Applying CP33 overlay…');const out=applyCp33Overlay(src,assets);setStatus('Calculating CP33 output hashes…');const [o1,o256]=await Promise.all([sha1(out),sha256(out)]);outputUrl=URL.createObjectURL(new Blob([out],{type:'application/octet-stream'}));download.href=outputUrl;download.hidden=false;hashBox.textContent=`Generated CP33 SHA-1: ${o1}\nGenerated CP33 SHA-256: ${o256}`;hashBox.style.whiteSpace='pre-wrap';hashBox.hidden=false;setStatus('PASS — CP33 generated from the exact CP27 prerequisite. Output hashes are shown below.');}catch(e){setStatus(e?.message||String(e),true)}finally{button.disabled=false;input.disabled=false}});
+function clearOutput(){
+  if(outputUrl){URL.revokeObjectURL(outputUrl);outputUrl=null}
+  download.hidden=true;download.removeAttribute('href');hashBox.hidden=true;hashBox.textContent='';
+}
+function readFile(file){
+  return new Promise((resolve,reject)=>{
+    const r=new FileReader();
+    r.onload=()=>resolve(new Uint8Array(r.result));
+    r.onerror=()=>reject(r.error||new Error('File could not be read.'));
+    r.readAsArrayBuffer(file);
+  });
+}
+async function fetchAsset(name){
+  const r=await fetch('./assets/'+name,{cache:'no-store'});
+  if(!r.ok)throw new Error('Required CP33 asset could not be loaded: '+name);
+  return new Uint8Array(await r.arrayBuffer());
+}
+async function loadAssets(){
+  const names=[
+    'grimble_party_icon_32x64.4bpp',
+    'gravibite_party_icon_32x64.4bpp',
+    'dreadchomp_party_icon_32x64.4bpp',
+    'frostyrant_party_icon_32x64.4bpp',
+    'mournevoir_party_icon_32x64.4bpp',
+    'party_icon_palette_slot3.gbapal',
+    'party_icon_palette_slot4.gbapal',
+    'party_icon_palette_slot5.gbapal'
+  ];
+  const values=await Promise.all(names.map(fetchAsset));
+  const a={};names.forEach((n,i)=>a[n]=values[i]);
+  a.wrapper=await fetchAsset('frozen_sovereignty_final.bin');
+  return a;
+}
+async function loadRc6Payload(){
+  const r=await fetch('./Unbound_Final_Unified_2026-09-24_RC6.upf',{cache:'no-store'});
+  if(!r.ok)throw new Error('Retained unified RC6 payload could not be loaded (HTTP '+r.status+').');
+  return new Uint8Array(await r.arrayBuffer());
+}
+function publish(out,label,o1,o256){
+  outputUrl=URL.createObjectURL(new Blob([out],{type:'application/octet-stream'}));
+  download.href=outputUrl;
+  download.download=label;
+  download.hidden=false;
+  hashBox.textContent='Generated SHA-1: '+o1+'\nGenerated SHA-256: '+o256;
+  hashBox.style.whiteSpace='pre-wrap';
+  hashBox.hidden=false;
+}
+
+input.addEventListener('change',()=>{
+  clearOutput();
+  const f=input.files?.[0];
+  if(!f){selection.textContent='No ROM selected.';button.disabled=true;setStatus('Waiting for original ROM.');return}
+  selection.textContent=f.name+' · '+f.size.toLocaleString()+' bytes';
+  button.disabled=false;
+  setStatus(f.size===ROM_SIZE?'ROM selected. Tap Build patched ROM to verify it.':'ROM size is not 33,554,432 bytes.',f.size!==ROM_SIZE);
+});
+
+button.addEventListener('click',async()=>{
+  const f=input.files?.[0];if(!f)return;
+  clearOutput();button.disabled=true;input.disabled=true;
+  try{
+    setStatus('Reading ROM…');
+    const src=await readFile(f);
+    if(src.length!==ROM_SIZE)throw new Error('Expected '+ROM_SIZE.toLocaleString()+' bytes; got '+src.length.toLocaleString()+'.');
+
+    setStatus('Verifying ROM hashes…');
+    const [s1,s256]=await Promise.all([sha1(src),sha256(src)]);
+
+    if(s1===SOURCE_SHA1 && s256===SOURCE_SHA256){
+      setStatus('Clean Unbound v2.1.1.1 verified. Loading retained unified payload…');
+      const [payload,assets]=await Promise.all([loadRc6Payload(),loadAssets()]);
+      setStatus('Applying retained clean-base gameplay patch…');
+      const rc6=await applyUnifiedPatch(src,payload);
+      setStatus('Applying CP33 item and presentation layer…');
+      const out=applyCp33Overlay(rc6,assets,{allowCompatibilityInputs:true});
+      setStatus('Verifying deterministic clean-base output…');
+      const [o1,o256]=await Promise.all([sha1(out),sha256(out)]);
+      if(o1!==CLEAN_COMPAT_SHA1||o256!==CLEAN_COMPAT_SHA256)throw new Error('Clean-base CP33 compatibility output verification failed.');
+      publish(out,'Pokemon Unbound - CP33 Clean-Base Compatibility.gba',o1,o256);
+      setStatus('PASS — original Unbound v2.1.1.1 patched successfully. This is the deterministic CP33 compatibility build.');
+      return;
+    }
+
+    if(s1===CP27_SHA1 && s256===CP27_SHA256){
+      setStatus('Exact CP27 prerequisite verified. Loading CP33 assets…');
+      const assets=await loadAssets();
+      setStatus('Applying full CP33 overlay…');
+      const out=applyCp33Overlay(src,assets);
+      setStatus('Calculating CP33 output hashes…');
+      const [o1,o256]=await Promise.all([sha1(out),sha256(out)]);
+      publish(out,'Pokemon Unbound - CP33 Latest.gba',o1,o256);
+      setStatus('PASS — full CP33 overlay generated from the exact CP27 redesign prerequisite.');
+      return;
+    }
+
+    throw new Error('ROM not recognized. Use the exact original Pokémon Unbound v2.1.1.1 ROM (SHA-1 b4776b82…) or the exact CP27 prerequisite (SHA-1 27995aec…).');
+  }catch(e){
+    setStatus(e?.message||String(e),true);
+  }finally{
+    button.disabled=false;input.disabled=false;
+  }
+});
+
 window.addEventListener('pagehide',clearOutput);
 </script>
-</body></html>
+</body>
+</html>
