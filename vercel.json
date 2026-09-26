@@ -1,4 +1,6 @@
 {
+  "buildCommand": "node deploy/verify-package.mjs && rm -rf dist && mkdir -p dist && unzip -q deploy/Unbound_Save_Studio_v0.5.1_Recovered_CP33_CleanBase.zip -d dist && node deploy/patch-index.mjs",
+  "outputDirectory": "dist",
   "cleanUrls": false,
   "trailingSlash": false,
   "headers": [
