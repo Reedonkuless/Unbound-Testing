@@ -1,14 +1,11 @@
 {
-  "buildCommand": "node deploy/build-v053.mjs",
-  "outputDirectory": "dist",
-  "cleanUrls": false,
-  "trailingSlash": false,
-  "headers": [{
-    "source": "/(.*)",
-    "headers": [
-      {"key":"X-Content-Type-Options","value":"nosniff"},
-      {"key":"Referrer-Policy","value":"no-referrer"},
-      {"key":"Cache-Control","value":"no-store"}
-    ]
-  }]
+  "buildCommand":"node deploy/build-v054.mjs",
+  "outputDirectory":"dist",
+  "cleanUrls":false,
+  "trailingSlash":false,
+  "headers":[{"source":"/(.*)","headers":[
+    {"key":"X-Content-Type-Options","value":"nosniff"},
+    {"key":"Referrer-Policy","value":"no-referrer"},
+    {"key":"Cache-Control","value":"no-store"}
+  ]}]
 }
