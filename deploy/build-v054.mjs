@@ -10,4 +10,5 @@ run(process.execPath,['deploy/patch-editor-mega-forms.mjs']);
 run(process.execPath,['deploy/patch-ios-inline-patcher.mjs']);
 run(process.execPath,['deploy/patch-dreadchomp-v053.mjs']);
 run(process.execPath,['deploy/patch-grimble-v054.mjs']);
+run(process.execPath,['deploy/patch-cp07-editor-metadata.mjs']);
 console.log('PASS v0.5.4 Grimble eye-fix production build');
