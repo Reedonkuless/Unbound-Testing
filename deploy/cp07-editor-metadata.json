@@ -1,0 +1,170 @@
+{
+  "parent_rom_sha256": "7f893e205425500c9a768b5897ed232994a074892f6cb8d36ad4416b3deedf29",
+  "files": {
+    "data/items.txt": {
+      "before_sha256": "27e500ad375dd1f4eb9372986fc8f0fb0bddccf85a1b10067f4f886abd46a433",
+      "after_sha256": "c2c18ec2febc8a3a45be78fa10a89e22a9f1b75ad14a4de3992a429aff281eeb",
+      "append": "731: Soul Circuit\n732: Infinite Candy\n"
+    },
+    "data/move_table_from_rom.json": {
+      "before_sha256": "d5f7b88bc0fdd9947c520233addd6fd19add85acb0f861592896c4fccdefd000",
+      "after_sha256": "d34f3b6ed79574e70a3e3793df0bb29b39fad7b1c6d60740e7da8a27795a7780",
+      "move": {
+        "move_id": 927,
+        "offset": 23389971,
+        "name": "Soul Sharpen",
+        "raw_hex": "cde3e9e000cddcd5e6e4d9e2ff",
+        "base_pp": 15
+      },
+      "move_count": 927
+    },
+    "data/moves.txt": {
+      "before_sha256": "0c8fa959defe23ad73ccd6d6c2d33d8a0718b9ad0aad6b0e9eeaa205e5a8089c",
+      "after_sha256": "7872f37e8757cd08e87955fd351b74ca75d1f58a82432db17b7c26ced71abc0b",
+      "append": "927: Soul Sharpen\n"
+    },
+    "data/pokemon.txt": {
+      "before_sha256": "283181fcdaac2525609d33514dd0793dc9aeb4d85e606bf8f1f763d621aa4bdc",
+      "after_sha256": "2203bfe7bde24e03aff58dee0b3489b4af9e949927450f7fead0d2152a1d24b4",
+      "append": "1303: Orevolt\n1304: Ferrapod\n1305: Tyrathorn\n1306: Spectrum\n1307: Spectang\n1308: Spectagross\n"
+    },
+    "src/puse/speciesAbilitiesMeta.json.js": {
+      "before_sha256": "2615a9ef8b4a56cdb9b904c5cf9c617dae0bccdfe0f10e3d3698082fc2a98e22",
+      "after_sha256": "007bbaadb09ae8cf58272ab4fc2bd21cc3aa1b5ace9433ef6218ccd2afdf8af5",
+      "add": {
+        "1303": {
+          "ability_1_id": 69,
+          "ability_2_id": 0,
+          "hidden_ability_id": 0
+        },
+        "1304": {
+          "ability_1_id": 69,
+          "ability_2_id": 0,
+          "hidden_ability_id": 0
+        },
+        "1305": {
+          "ability_1_id": 69,
+          "ability_2_id": 0,
+          "hidden_ability_id": 0
+        },
+        "1306": {
+          "ability_1_id": 26,
+          "ability_2_id": 0,
+          "hidden_ability_id": 0
+        },
+        "1307": {
+          "ability_1_id": 26,
+          "ability_2_id": 0,
+          "hidden_ability_id": 0
+        },
+        "1308": {
+          "ability_1_id": 26,
+          "ability_2_id": 0,
+          "hidden_ability_id": 0
+        }
+      }
+    },
+    "src/puse/speciesBaseStats.json.js": {
+      "before_sha256": "3c8688b1eb978c964e74a01b915066ef2906ba0667b24d8d962c2c4851c10160",
+      "after_sha256": "7b5b2625e9f88248d7944160ae235d8142a4f7e8873f26a0ffe5beb8bab2da20",
+      "add": {
+        "1303": {
+          "atk": 64,
+          "def": 50,
+          "hp": 50,
+          "spa": 45,
+          "spd": 50,
+          "spe": 41
+        },
+        "1304": {
+          "atk": 84,
+          "def": 70,
+          "hp": 70,
+          "spa": 65,
+          "spd": 70,
+          "spe": 51
+        },
+        "1305": {
+          "atk": 134,
+          "def": 110,
+          "hp": 100,
+          "spa": 70,
+          "spd": 84,
+          "spe": 72
+        },
+        "1306": {
+          "atk": 35,
+          "def": 80,
+          "hp": 40,
+          "spa": 55,
+          "spd": 60,
+          "spe": 30
+        },
+        "1307": {
+          "atk": 50,
+          "def": 100,
+          "hp": 60,
+          "spa": 85,
+          "spd": 75,
+          "spe": 50
+        },
+        "1308": {
+          "atk": 70,
+          "def": 125,
+          "hp": 80,
+          "spa": 130,
+          "spd": 105,
+          "spe": 90
+        }
+      }
+    },
+    "src/puse/speciesGrowthRates.json.js": {
+      "before_sha256": "40eb28ac3f7b2bc0d6ca91561fd4237ffe432e4dc9501d537f8433df7ff9ec89",
+      "after_sha256": "ed93b8b403bc1c3353859d3aa51a563dd5e41d00a372bdbb6438c786e741482c",
+      "add": {
+        "1303": {
+          "growth_rate": 3
+        },
+        "1304": {
+          "growth_rate": 3
+        },
+        "1305": {
+          "growth_rate": 3
+        },
+        "1306": {
+          "growth_rate": 3
+        },
+        "1307": {
+          "growth_rate": 3
+        },
+        "1308": {
+          "growth_rate": 3
+        }
+      }
+    },
+    "src/puse/speciesIdentityMeta.json.js": {
+      "before_sha256": "f23b70858b2bd036db8aa6c850ae795b037d6709235d1eda0f68f45e7223053a",
+      "after_sha256": "e6f2d76d40887dcde0a2c46f599469223070ceaa578178cf49f52159a810d30e",
+      "add": {
+        "1303": {
+          "gender_threshold": 127
+        },
+        "1304": {
+          "gender_threshold": 127
+        },
+        "1305": {
+          "gender_threshold": 127
+        },
+        "1306": {
+          "gender_threshold": 255
+        },
+        "1307": {
+          "gender_threshold": 255
+        },
+        "1308": {
+          "gender_threshold": 255
+        }
+      }
+    }
+  }
+}
