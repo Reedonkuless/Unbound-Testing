@@ -1,0 +1,42 @@
+[
+  {
+    "offset": 33550920,
+    "hex": "2100011c0003e800077d010cc9000daf010f4801122c0015b00116940118a3001b52001e2400215b002451012769022ae6012d590030c800330000ff",
+    "owner": "1298 restored Ice Shard12 / Ice Fang22; original rows retained"
+  },
+  {
+    "offset": 23328876,
+    "hex": "48f2ff09",
+    "owner": "1298 learnset pointer"
+  },
+  {
+    "offset": 33550980,
+    "hex": "b501002100011c0001e80001c900017d010caf010f4801122c0015b00116b50117940118a3001d5200212400255b002951012c69022fe60134590038c8003c0000ff",
+    "owner": "1299 restored Ice Shard12 / Ice Fang22; original rows retained"
+  },
+  {
+    "offset": 23328880,
+    "hex": "84f2ff09",
+    "owner": "1299 learnset pointer"
+  },
+  {
+    "offset": 33551048,
+    "hex": "9b0300f200002100011c0001e80001c900017d010caf010f4801122c0015b00116b50117940118a3001d5200212400255b002951012c69022ff2002fe6013959003fc800450000ff",
+    "owner": "1300 restored Ice Shard12 / Ice Fang22; original rows retained"
+  },
+  {
+    "offset": 23328884,
+    "hex": "c8f2ff09",
+    "owner": "1300 learnset pointer"
+  },
+  {
+    "offset": 33551120,
+    "hex": "9b03009c0300f200002100011c0001e80001c900017d010caf010f4801122c0015b00116b50117940118a3001d5200212400255b002951012c69022ff2002fe6013959003fc800450000ff",
+    "owner": "1301 restored Ice Shard12 / Ice Fang22; original rows retained"
+  },
+  {
+    "offset": 23328888,
+    "hex": "10f3ff09",
+    "owner": "1301 learnset pointer"
+  }
+]
