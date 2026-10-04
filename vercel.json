@@ -1,5 +1,5 @@
 {
-  "buildCommand": "node deploy/build-v061.mjs",
+  "buildCommand": "node deploy/build-v062.mjs",
   "outputDirectory": "dist",
   "cleanUrls": false,
   "trailingSlash": false,

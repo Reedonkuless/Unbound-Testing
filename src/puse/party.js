@@ -705,7 +705,7 @@ function recalculatePartyStats(rawMon, clampHp = true) {
 
 function getExpAtLevel(rateIdx, level) {
     let n = Number(level || 1);
-    if (n <= 1) return 0;
+    if (n <= 1) return 1;
     if (n > 100) n = 100;
 
     if (rateIdx === 0) {
