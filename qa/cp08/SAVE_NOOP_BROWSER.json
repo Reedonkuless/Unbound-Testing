@@ -1,0 +1,10 @@
+{
+  "fixture": "canonical/INFINITE_CANDY_R2_RAILWAY_SOURCE_2026-10-01/canonical/qa/resume/evo_saved.sav",
+  "input_size": 131072,
+  "output_size": 131072,
+  "changed_bytes": 0,
+  "byte_identical": true,
+  "editor_reimport": true,
+  "native_game_load": "PENDING",
+  "errors": []
+}

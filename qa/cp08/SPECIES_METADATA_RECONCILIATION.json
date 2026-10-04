@@ -1,0 +1,478 @@
+{
+  "rows": [
+    {
+      "species_id": 1298,
+      "field": "stats",
+      "editor": {
+        "atk": 70,
+        "def": 45,
+        "hp": 58,
+        "spa": 40,
+        "spd": 45,
+        "spe": 42
+      },
+      "rom": {
+        "hp": 58,
+        "atk": 70,
+        "def": 45,
+        "spe": 42,
+        "spa": 40,
+        "spd": 45
+      },
+      "match": true
+    },
+    {
+      "species_id": 1299,
+      "field": "stats",
+      "editor": {
+        "atk": 90,
+        "def": 65,
+        "hp": 68,
+        "spa": 50,
+        "spd": 55,
+        "spe": 82
+      },
+      "rom": {
+        "hp": 68,
+        "atk": 90,
+        "def": 65,
+        "spe": 82,
+        "spa": 50,
+        "spd": 55
+      },
+      "match": true
+    },
+    {
+      "species_id": 1300,
+      "field": "stats",
+      "editor": {
+        "atk": 130,
+        "def": 95,
+        "hp": 108,
+        "spa": 80,
+        "spd": 85,
+        "spe": 102
+      },
+      "rom": {
+        "hp": 108,
+        "atk": 130,
+        "def": 95,
+        "spe": 102,
+        "spa": 80,
+        "spd": 85
+      },
+      "match": true
+    },
+    {
+      "species_id": 1301,
+      "field": "stats",
+      "editor": {
+        "atk": 170,
+        "def": 115,
+        "hp": 108,
+        "spa": 120,
+        "spd": 95,
+        "spe": 92
+      },
+      "rom": {
+        "hp": 108,
+        "atk": 170,
+        "def": 115,
+        "spe": 92,
+        "spa": 120,
+        "spd": 95
+      },
+      "match": true
+    },
+    {
+      "species_id": 1302,
+      "field": "stats",
+      "editor": {
+        "atk": 85,
+        "def": 65,
+        "hp": 68,
+        "spa": 165,
+        "spd": 135,
+        "spe": 100
+      },
+      "rom": {
+        "hp": 68,
+        "atk": 85,
+        "def": 65,
+        "spe": 100,
+        "spa": 165,
+        "spd": 135
+      },
+      "match": true
+    },
+    {
+      "species_id": 1303,
+      "field": "stats",
+      "editor": {
+        "atk": 64,
+        "def": 50,
+        "hp": 50,
+        "spa": 45,
+        "spd": 50,
+        "spe": 41
+      },
+      "rom": {
+        "hp": 50,
+        "atk": 64,
+        "def": 50,
+        "spe": 41,
+        "spa": 45,
+        "spd": 50
+      },
+      "match": true
+    },
+    {
+      "species_id": 1304,
+      "field": "stats",
+      "editor": {
+        "atk": 84,
+        "def": 70,
+        "hp": 70,
+        "spa": 65,
+        "spd": 70,
+        "spe": 51
+      },
+      "rom": {
+        "hp": 70,
+        "atk": 84,
+        "def": 70,
+        "spe": 51,
+        "spa": 65,
+        "spd": 70
+      },
+      "match": true
+    },
+    {
+      "species_id": 1305,
+      "field": "stats",
+      "editor": {
+        "atk": 134,
+        "def": 110,
+        "hp": 100,
+        "spa": 70,
+        "spd": 84,
+        "spe": 72
+      },
+      "rom": {
+        "hp": 100,
+        "atk": 134,
+        "def": 110,
+        "spe": 72,
+        "spa": 70,
+        "spd": 84
+      },
+      "match": true
+    },
+    {
+      "species_id": 1306,
+      "field": "stats",
+      "editor": {
+        "atk": 35,
+        "def": 80,
+        "hp": 40,
+        "spa": 55,
+        "spd": 60,
+        "spe": 30
+      },
+      "rom": {
+        "hp": 40,
+        "atk": 35,
+        "def": 80,
+        "spe": 30,
+        "spa": 55,
+        "spd": 60
+      },
+      "match": true
+    },
+    {
+      "species_id": 1307,
+      "field": "stats",
+      "editor": {
+        "atk": 50,
+        "def": 100,
+        "hp": 60,
+        "spa": 85,
+        "spd": 75,
+        "spe": 50
+      },
+      "rom": {
+        "hp": 60,
+        "atk": 50,
+        "def": 100,
+        "spe": 50,
+        "spa": 85,
+        "spd": 75
+      },
+      "match": true
+    },
+    {
+      "species_id": 1308,
+      "field": "stats",
+      "editor": {
+        "atk": 70,
+        "def": 125,
+        "hp": 80,
+        "spa": 130,
+        "spd": 105,
+        "spe": 90
+      },
+      "rom": {
+        "hp": 80,
+        "atk": 70,
+        "def": 125,
+        "spe": 90,
+        "spa": 130,
+        "spd": 105
+      },
+      "match": true
+    },
+    {
+      "species_id": 1298,
+      "field": "growth_rate",
+      "editor": 3,
+      "rom": 3,
+      "match": true
+    },
+    {
+      "species_id": 1299,
+      "field": "growth_rate",
+      "editor": 3,
+      "rom": 3,
+      "match": true
+    },
+    {
+      "species_id": 1300,
+      "field": "growth_rate",
+      "editor": 3,
+      "rom": 3,
+      "match": true
+    },
+    {
+      "species_id": 1301,
+      "field": "growth_rate",
+      "editor": 3,
+      "rom": 3,
+      "match": true
+    },
+    {
+      "species_id": 1302,
+      "field": "growth_rate",
+      "editor": 5,
+      "rom": 5,
+      "match": true
+    },
+    {
+      "species_id": 1303,
+      "field": "growth_rate",
+      "editor": 3,
+      "rom": 3,
+      "match": true
+    },
+    {
+      "species_id": 1304,
+      "field": "growth_rate",
+      "editor": 3,
+      "rom": 3,
+      "match": true
+    },
+    {
+      "species_id": 1305,
+      "field": "growth_rate",
+      "editor": 3,
+      "rom": 3,
+      "match": true
+    },
+    {
+      "species_id": 1306,
+      "field": "growth_rate",
+      "editor": 3,
+      "rom": 3,
+      "match": true
+    },
+    {
+      "species_id": 1307,
+      "field": "growth_rate",
+      "editor": 3,
+      "rom": 3,
+      "match": true
+    },
+    {
+      "species_id": 1308,
+      "field": "growth_rate",
+      "editor": 3,
+      "rom": 3,
+      "match": true
+    },
+    {
+      "species_id": 1298,
+      "field": "abilities",
+      "editor": {
+        "ability_1_id": 77,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "rom": {
+        "ability_1_id": 77,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "match": true
+    },
+    {
+      "species_id": 1299,
+      "field": "abilities",
+      "editor": {
+        "ability_1_id": 77,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "rom": {
+        "ability_1_id": 77,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "match": true
+    },
+    {
+      "species_id": 1300,
+      "field": "abilities",
+      "editor": {
+        "ability_1_id": 77,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "rom": {
+        "ability_1_id": 77,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "match": true
+    },
+    {
+      "species_id": 1301,
+      "field": "abilities",
+      "editor": {
+        "ability_1_id": 77,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "rom": {
+        "ability_1_id": 77,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "match": true
+    },
+    {
+      "species_id": 1302,
+      "field": "abilities",
+      "editor": {
+        "ability_1_id": 0,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "rom": {
+        "ability_1_id": 0,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "match": true
+    },
+    {
+      "species_id": 1303,
+      "field": "abilities",
+      "editor": {
+        "ability_1_id": 69,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "rom": {
+        "ability_1_id": 69,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "match": true
+    },
+    {
+      "species_id": 1304,
+      "field": "abilities",
+      "editor": {
+        "ability_1_id": 69,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "rom": {
+        "ability_1_id": 69,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "match": true
+    },
+    {
+      "species_id": 1305,
+      "field": "abilities",
+      "editor": {
+        "ability_1_id": 69,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "rom": {
+        "ability_1_id": 69,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "match": true
+    },
+    {
+      "species_id": 1306,
+      "field": "abilities",
+      "editor": {
+        "ability_1_id": 26,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "rom": {
+        "ability_1_id": 26,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "match": true
+    },
+    {
+      "species_id": 1307,
+      "field": "abilities",
+      "editor": {
+        "ability_1_id": 26,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "rom": {
+        "ability_1_id": 26,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "match": true
+    },
+    {
+      "species_id": 1308,
+      "field": "abilities",
+      "editor": {
+        "ability_1_id": 26,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "rom": {
+        "ability_1_id": 26,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      },
+      "match": true
+    }
+  ],
+  "unresolved_mismatches": 0
+}

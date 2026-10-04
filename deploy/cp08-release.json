@@ -1,0 +1,27 @@
+{
+  "tooling_version": "0.6.0",
+  "supported_source_version": "Pok\u00e9mon Unbound v2.1.1.1 (owner-confirmed original file)",
+  "source": {
+    "size": 33554432,
+    "sha1": "b4776b82a4c7915d0fadeaa27e013523f99dfd94",
+    "sha256": "7aa25bbf568f7cfcf6ee1cf2e9e6ff637350b3d0705c2375cabb6baa7d9739f7"
+  },
+  "target": {
+    "filename": "CP08_SOUL_SHARPEN_HONE_CLAWS_DEV.gba",
+    "size": 33554432,
+    "sha1": "7e66dad4611da0c8f2fd01879861c85baff9bad5",
+    "sha256": "b21775532a9622f1195b2d8a08b1414a3f8e1998de9fc55698195fbb25464b11"
+  },
+  "payload": {
+    "filename": "Unbound_CP08_Exact_2026-10-04.upf",
+    "size": 589900,
+    "sha1": "b4c22a4219106d378cb3ba15e3c54596c777a07a",
+    "sha256": "3286bfd7143feaadd69334ba1d56d06b9cc9dff7c3ab67e91c3e508fd5dc68f0",
+    "records": 897
+  },
+  "naming_reconciliation": "Owner explicitly confirmed Pokemon Unbound (v2.1.1.1).gba on2026-10-04. Earlier v2.1.1 wording is superseded; pre-hotfix v2.1.1 is not silently accepted.",
+  "rom_unchanged": true,
+  "changed_source_bytes": 559721,
+  "patch_method": "UPF1 final accepted immutable target slices; no engine/gameplay rebuild",
+  "custom_namespace": "cp08-namespace.json"
+}

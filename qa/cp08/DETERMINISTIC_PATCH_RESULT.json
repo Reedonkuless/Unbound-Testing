@@ -1,0 +1,59 @@
+{
+  "source": {
+    "size": 33554432,
+    "sha1": "b4776b82a4c7915d0fadeaa27e013523f99dfd94",
+    "sha256": "7aa25bbf568f7cfcf6ee1cf2e9e6ff637350b3d0705c2375cabb6baa7d9739f7"
+  },
+  "target": {
+    "size": 33554432,
+    "sha1": "7e66dad4611da0c8f2fd01879861c85baff9bad5",
+    "sha256": "b21775532a9622f1195b2d8a08b1414a3f8e1998de9fc55698195fbb25464b11"
+  },
+  "builds": [
+    {
+      "number": 1,
+      "size": 33554432,
+      "sha1": "7e66dad4611da0c8f2fd01879861c85baff9bad5",
+      "sha256": "b21775532a9622f1195b2d8a08b1414a3f8e1998de9fc55698195fbb25464b11",
+      "zero_byte_differences": true,
+      "source_unchanged": true
+    },
+    {
+      "number": 2,
+      "size": 33554432,
+      "sha1": "7e66dad4611da0c8f2fd01879861c85baff9bad5",
+      "sha256": "b21775532a9622f1195b2d8a08b1414a3f8e1998de9fc55698195fbb25464b11",
+      "zero_byte_differences": true,
+      "source_unchanged": true
+    }
+  ],
+  "wrong_input": [
+    {
+      "name": "corrupt",
+      "rejected": true,
+      "error": "This is not the exact clean Pokémon Unbound v2.1.1.1 ROM.",
+      "output_produced": false
+    },
+    {
+      "name": "truncated",
+      "rejected": true,
+      "error": "This is not the exact clean Pokémon Unbound v2.1.1.1 ROM.",
+      "output_produced": false
+    },
+    {
+      "name": "already_patched",
+      "rejected": true,
+      "error": "This is not the exact clean Pokémon Unbound v2.1.1.1 ROM.",
+      "output_produced": false
+    },
+    {
+      "name": "arbitrary_same_size",
+      "rejected": true,
+      "error": "This is not the exact clean Pokémon Unbound v2.1.1.1 ROM.",
+      "output_produced": false
+    }
+  ],
+  "repeat_identical": true,
+  "failed_ui_has_no_download": true,
+  "status": "PASS"
+}

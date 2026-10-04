@@ -1,0 +1,409 @@
+{
+  "target": {
+    "size": 33554432,
+    "sha1": "7e66dad4611da0c8f2fd01879861c85baff9bad5",
+    "sha256": "b21775532a9622f1195b2d8a08b1414a3f8e1998de9fc55698195fbb25464b11"
+  },
+  "species": [
+    {
+      "id": 1298,
+      "name": "Grimble",
+      "name_offset": 23065686,
+      "stats_offset": 23102152,
+      "stats": {
+        "hp": 58,
+        "atk": 70,
+        "def": 45,
+        "spe": 42,
+        "spa": 40,
+        "spd": 45
+      },
+      "type_ids": [
+        16,
+        4
+      ],
+      "types": [
+        "Dragon",
+        "Ground"
+      ],
+      "gender_threshold": 127,
+      "growth_rate": 3,
+      "abilities": {
+        "ability_1_id": 77,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      }
+    },
+    {
+      "id": 1299,
+      "name": "Gravibite",
+      "name_offset": 23065697,
+      "stats_offset": 23102180,
+      "stats": {
+        "hp": 68,
+        "atk": 90,
+        "def": 65,
+        "spe": 82,
+        "spa": 50,
+        "spd": 55
+      },
+      "type_ids": [
+        16,
+        4
+      ],
+      "types": [
+        "Dragon",
+        "Ground"
+      ],
+      "gender_threshold": 127,
+      "growth_rate": 3,
+      "abilities": {
+        "ability_1_id": 77,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      }
+    },
+    {
+      "id": 1300,
+      "name": "Dreadchomp",
+      "name_offset": 23065708,
+      "stats_offset": 23102208,
+      "stats": {
+        "hp": 108,
+        "atk": 130,
+        "def": 95,
+        "spe": 102,
+        "spa": 80,
+        "spd": 85
+      },
+      "type_ids": [
+        16,
+        4
+      ],
+      "types": [
+        "Dragon",
+        "Ground"
+      ],
+      "gender_threshold": 127,
+      "growth_rate": 3,
+      "abilities": {
+        "ability_1_id": 77,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      }
+    },
+    {
+      "id": 1301,
+      "name": "Frostyrant",
+      "name_offset": 23065719,
+      "stats_offset": 23102236,
+      "stats": {
+        "hp": 108,
+        "atk": 170,
+        "def": 115,
+        "spe": 92,
+        "spa": 120,
+        "spd": 95
+      },
+      "type_ids": [
+        16,
+        4
+      ],
+      "types": [
+        "Dragon",
+        "Ground"
+      ],
+      "gender_threshold": 127,
+      "growth_rate": 3,
+      "abilities": {
+        "ability_1_id": 77,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      }
+    },
+    {
+      "id": 1302,
+      "name": "Mournevoir",
+      "name_offset": 23065730,
+      "stats_offset": 23102264,
+      "stats": {
+        "hp": 68,
+        "atk": 85,
+        "def": 65,
+        "spe": 100,
+        "spa": 165,
+        "spd": 135
+      },
+      "type_ids": [
+        17,
+        23
+      ],
+      "types": [
+        "Dark",
+        "Fairy"
+      ],
+      "gender_threshold": 127,
+      "growth_rate": 5,
+      "abilities": {
+        "ability_1_id": 0,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      }
+    },
+    {
+      "id": 1303,
+      "name": "Orevolt",
+      "name_offset": 23065741,
+      "stats_offset": 23102292,
+      "stats": {
+        "hp": 50,
+        "atk": 64,
+        "def": 50,
+        "spe": 41,
+        "spa": 45,
+        "spd": 50
+      },
+      "type_ids": [
+        5,
+        13
+      ],
+      "types": [
+        "Rock",
+        "Electric"
+      ],
+      "gender_threshold": 127,
+      "growth_rate": 3,
+      "abilities": {
+        "ability_1_id": 69,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      }
+    },
+    {
+      "id": 1304,
+      "name": "Ferrapod",
+      "name_offset": 23065752,
+      "stats_offset": 23102320,
+      "stats": {
+        "hp": 70,
+        "atk": 84,
+        "def": 70,
+        "spe": 51,
+        "spa": 65,
+        "spd": 70
+      },
+      "type_ids": [
+        5,
+        13
+      ],
+      "types": [
+        "Rock",
+        "Electric"
+      ],
+      "gender_threshold": 127,
+      "growth_rate": 3,
+      "abilities": {
+        "ability_1_id": 69,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      }
+    },
+    {
+      "id": 1305,
+      "name": "Tyrathorn",
+      "name_offset": 23065763,
+      "stats_offset": 23102348,
+      "stats": {
+        "hp": 100,
+        "atk": 134,
+        "def": 110,
+        "spe": 72,
+        "spa": 70,
+        "spd": 84
+      },
+      "type_ids": [
+        5,
+        13
+      ],
+      "types": [
+        "Rock",
+        "Electric"
+      ],
+      "gender_threshold": 127,
+      "growth_rate": 3,
+      "abilities": {
+        "ability_1_id": 69,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      }
+    },
+    {
+      "id": 1306,
+      "name": "Spectrum",
+      "name_offset": 23065774,
+      "stats_offset": 23102376,
+      "stats": {
+        "hp": 40,
+        "atk": 35,
+        "def": 80,
+        "spe": 30,
+        "spa": 55,
+        "spd": 60
+      },
+      "type_ids": [
+        8,
+        7
+      ],
+      "types": [
+        "Steel",
+        "Ghost"
+      ],
+      "gender_threshold": 255,
+      "growth_rate": 3,
+      "abilities": {
+        "ability_1_id": 26,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      }
+    },
+    {
+      "id": 1307,
+      "name": "Spectang",
+      "name_offset": 23065785,
+      "stats_offset": 23102404,
+      "stats": {
+        "hp": 60,
+        "atk": 50,
+        "def": 100,
+        "spe": 50,
+        "spa": 85,
+        "spd": 75
+      },
+      "type_ids": [
+        8,
+        7
+      ],
+      "types": [
+        "Steel",
+        "Ghost"
+      ],
+      "gender_threshold": 255,
+      "growth_rate": 3,
+      "abilities": {
+        "ability_1_id": 26,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      }
+    },
+    {
+      "id": 1308,
+      "name": "Spectagross",
+      "name_offset": 23065796,
+      "stats_offset": 23102432,
+      "stats": {
+        "hp": 80,
+        "atk": 70,
+        "def": 125,
+        "spe": 90,
+        "spa": 130,
+        "spd": 105
+      },
+      "type_ids": [
+        8,
+        7
+      ],
+      "types": [
+        "Steel",
+        "Ghost"
+      ],
+      "gender_threshold": 255,
+      "growth_rate": 3,
+      "abilities": {
+        "ability_1_id": 26,
+        "ability_2_id": 0,
+        "hidden_ability_id": 0
+      }
+    }
+  ],
+  "moves": [
+    {
+      "id": 923,
+      "name": "Glacial Rend",
+      "name_offset": 23389919,
+      "name_bytes": "c1e0d5d7ddd5e000ccd9e2d8ff",
+      "data_offset": 11851652,
+      "pp": 10,
+      "type_id": 15
+    },
+    {
+      "id": 924,
+      "name": "TyrantPrison",
+      "name_offset": 23389932,
+      "name_bytes": "ceede6d5e2e8cae6dde7e3e2ff",
+      "data_offset": 11851664,
+      "pp": 5,
+      "type_id": 15
+    },
+    {
+      "id": 925,
+      "name": "Dark Whisper",
+      "name_offset": 23389945,
+      "name_bytes": "bed5e6df00d1dcdde7e4d9e6ff",
+      "data_offset": 11851676,
+      "pp": 20,
+      "type_id": 17
+    },
+    {
+      "id": 926,
+      "name": "Fey Bane",
+      "name_offset": 23389958,
+      "name_bytes": "c0d9ed00bcd5e2d9ffffffffff",
+      "data_offset": 11851688,
+      "pp": 10,
+      "type_id": 17
+    },
+    {
+      "id": 927,
+      "name": "Soul Sharpen",
+      "name_offset": 23389971,
+      "name_bytes": "cde3e9e000cddcd5e6e4d9e2ff",
+      "data_offset": 11851700,
+      "pp": 15,
+      "type_id": 7
+    }
+  ],
+  "items": [
+    {
+      "id": 729,
+      "name": "Soul Requiem",
+      "name_offset": 8904524,
+      "name_bytes": "cde3e9e000ccd9e5e9ddd9e1ff00"
+    },
+    {
+      "id": 730,
+      "name": "Tyrant's Crown",
+      "name_offset": 11839232,
+      "name_bytes": "ceede6d5e2e8b4e700bde6e3ebe2"
+    },
+    {
+      "id": 731,
+      "name": "Soul Circuit",
+      "name_offset": 8904612,
+      "name_bytes": "cde3e9e000bddde6d7e9dde8ff00"
+    },
+    {
+      "id": 732,
+      "name": "Infinite Candy",
+      "name_offset": 33553152,
+      "name_bytes": "c3e2dadde2dde8d900bdd5e2d8ed"
+    }
+  ],
+  "virtual_abilities": {
+    "1302": {
+      "raw_slot": 0,
+      "name": "Eclipse Heart",
+      "selection_index": 0,
+      "authority": "accepted CP17/CP08 native alias; existing species-specific selector retained"
+    }
+  }
+}

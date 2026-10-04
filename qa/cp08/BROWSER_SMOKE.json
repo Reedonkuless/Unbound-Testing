@@ -1,0 +1,11 @@
+{
+  "browser": "Linux Chromium 140; actual Windows/iOS not tested",
+  "patcher_download": {
+    "name": "CP08_SOUL_SHARPEN_HONE_CLAWS_DEV.gba",
+    "size": 33554432,
+    "sha1": "7e66dad4611da0c8f2fd01879861c85baff9bad5",
+    "sha256": "b21775532a9622f1195b2d8a08b1414a3f8e1998de9fc55698195fbb25464b11"
+  },
+  "errors": [],
+  "editor_ready": true
+}
