@@ -31,3 +31,4 @@ edit('dist/index.html',text=>replace(text,'<button id="export-sav"','<button id=
 console.log('PASS CP08 payload and browser file export integration');
 write('dist/manifest.webmanifest',JSON.stringify({name:'Unbound Save Studio',short_name:'Unbound',id:'/',start_url:'/',scope:'/',display:'standalone',theme_color:'#102b27',background_color:'#102b27'},null,2));
 for(const file of ['dist/index.html','dist/rom-patcher/index.html'])edit(file,text=>replace(text,'</head>','<link rel="manifest" href="/manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Unbound Save Studio">\n</head>'));
+edit('dist/index.html',text=>text.replaceAll('Recovered CP33','Accepted CP08').replaceAll('recovered CP33 candidate','accepted CP08 target'));
