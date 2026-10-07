@@ -1,42 +1,112 @@
 [
   {
-    "offset": 33550920,
-    "hex": "2100011c0003e800077d010cc9000daf010f4801122c0015b00116940118a3001b52001e2400215b002451012769022ae6012d590030c800330000ff",
-    "owner": "1298 restored Ice Shard12 / Ice Fang22; original rows retained"
+    "offset": 10434352,
+    "hex": "004b184741f4ff09",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 10434696,
+    "hex": "a0f4ff09",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
   },
   {
     "offset": 23328876,
-    "hex": "48f2ff09",
-    "owner": "1298 learnset pointer"
-  },
-  {
-    "offset": 33550980,
-    "hex": "b501002100011c0001e80001c900017d010caf010f4801122c0015b00116b50117940118a3001d5200212400255b002951012c69022fe60134590038c8003c0000ff",
-    "owner": "1299 restored Ice Shard12 / Ice Fang22; original rows retained"
+    "hex": "48f2ff",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
   },
   {
     "offset": 23328880,
-    "hex": "84f2ff09",
-    "owner": "1299 learnset pointer"
-  },
-  {
-    "offset": 33551048,
-    "hex": "9b0300f200002100011c0001e80001c900017d010caf010f4801122c0015b00116b50117940118a3001d5200212400255b002951012c69022ff2002fe6013959003fc800450000ff",
-    "owner": "1300 restored Ice Shard12 / Ice Fang22; original rows retained"
+    "hex": "84f2ff",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
   },
   {
     "offset": 23328884,
-    "hex": "c8f2ff09",
-    "owner": "1300 learnset pointer"
-  },
-  {
-    "offset": 33551120,
-    "hex": "9b03009c0300f200002100011c0001e80001c900017d010caf010f4801122c0015b00116b50117940118a3001d5200212400255b002951012c69022ff2002fe6013959003fc800450000ff",
-    "owner": "1301 restored Ice Shard12 / Ice Fang22; original rows retained"
+    "hex": "c8f2ff",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
   },
   {
     "offset": 23328888,
-    "hex": "10f3ff09",
-    "owner": "1301 learnset pointer"
+    "hex": "10f3",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 32320368,
+    "hex": "0120c046",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 32320492,
+    "hex": "01207047",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 32329712,
+    "hex": "00207047",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 32329989,
+    "hex": "e0",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 32330107,
+    "hex": "e7",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 32330677,
+    "hex": "e0",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 32330751,
+    "hex": "e0",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 32330828,
+    "hex": "b5e0",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 32331142,
+    "hex": "c046",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 32336504,
+    "hex": "c046",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 33550920,
+    "hex": "2100011c0003e800077d010cc9000daf010f4801122c0015b00116940118a3001b52001e2400215b002451012769022ae6012d590030c800330000",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 33550980,
+    "hex": "b501002100011c0001e80001c900017d010caf010f4801122c0015b00116b50117940118a3001d5200212400255b002951012c69022fe60134590038c8003c0000",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 33551048,
+    "hex": "9b0300f200002100011c0001e80001c900017d010caf010f4801122c0015b00116b50117940118a3001d5200212400255b002951012c69022ff2002fe6013959003fc800450000",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 33551120,
+    "hex": "9b03009c0300f200002100011c0001e80001c900017d010caf010f4801122c0015b00116b50117940118a3001d5200212400255b002951012c69022ff2002fe6013959003fc800450000",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 33551424,
+    "hex": "07b50b210022104bd7f69cfb0b4b98420bd30b4b984206d3c01a072803d84000084b185a01e000200ebd0ebc08bc9e46f8b50e001700044d044b18470e0500001205000090f4",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
+  },
+  {
+    "offset": 33551495,
+    "hex": "09e9fb030841379f08f001f101f201f2018a01f600f700f80064556509",
+    "owner": "CP09→CP11 cumulative repair bytes (CP10 learnset + CP11 scanner/tutor)"
   }
 ]
