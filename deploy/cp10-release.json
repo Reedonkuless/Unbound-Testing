@@ -14,10 +14,10 @@
   },
   "payload": {
     "filename": "Unbound_CP11_Exact_2026-10-07.upf",
-    "size": 591199,
-    "sha1": "02a0a5fe462b0de093209d2aa750e52238245242",
-    "sha256": "c29df4c5dcf68aed1eb4c3b06a163a0bc7925dea702751a7d42fbad97ece6549",
-    "records": 867
+    "size": 590523,
+    "sha1": "66411df32b659fe26c82d98bf1ba645e5ad16b73",
+    "sha256": "befab51682f25551373b73774aac6e3173f9f170d40a84408b141ab6b831f7f8",
+    "records": 916
   },
   "naming_reconciliation": "Owner explicitly confirmed Pokemon Unbound (v2.1.1.1).gba on 2026-10-04. Earlier v2.1.1 wording is superseded; pre-hotfix v2.1.1 is not silently accepted.",
   "rom_unchanged": true,
