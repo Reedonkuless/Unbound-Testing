@@ -23,17 +23,17 @@ for(const [before,after] of [[old.target.sha1,release.target.sha1],[old.target.s
  html=html.replaceAll(before,after);
 }
 html=html.replaceAll('CP09','CP11')
- .replaceAll('REPAIR TEST CANDIDATE','INDEPENDENT-QA PASSED GAMEPLAY CANDIDATE')
- .replaceAll('Primary QA passed; independent review pending.','CP09, CP10 and CP11 independent QA passed; production promotion remains separate.')
- .replace('deterministic CP11 target.','deterministic CP11 gameplay candidate. CP09, CP10 and CP11 independent QA passed; production promotion remains separate.');
+ .replaceAll('REPAIR TEST CANDIDATE','PROMOTED CP11 GAMEPLAY BASELINE')
+ .replaceAll('Primary QA passed; independent review pending.','CP09, CP10 and CP11 independent QA passed; CP11 promotion CLOSED.')
+ .replace('deterministic CP11 target.','deterministic promoted CP11 gameplay baseline. CP09, CP10 and CP11 independent QA passed; CP11 promotion CLOSED.');
 write('dist/rom-patcher/index.html',html);
 for(const path of ['dist/index.html','dist/main.js']){
  let text=read(path,'utf8').replaceAll('v0.6.3','v0.6.5').replaceAll('-CP09-edited','-CP11-edited').replaceAll('CP09','CP11');
  if(path.endsWith('index.html')){
-   text=text.replaceAll('Accepted CP08','CP11 gameplay candidate').replaceAll('accepted CP08 target','CP11 gameplay candidate');
+   text=text.replaceAll('Accepted CP08','promoted CP11 gameplay baseline').replaceAll('accepted CP08 target','promoted CP11 gameplay baseline');
    text=text.replaceAll('v0.6.5 · CP08','v0.6.5 · CP11');
-   text=text.replaceAll('CP11 repair candidate','CP11 gameplay candidate');
+   text=text.replaceAll('promoted CP11 gameplay baseline','promoted CP11 gameplay baseline');
  }
  write(path,text);
 }
-console.log('PASS v0.6.5 CP11 patcher/gameplay candidate; Save Studio catalog and save parser unchanged');
+console.log('PASS v0.6.5 CP11 patcher/promoted gameplay baseline; Save Studio catalog and save parser unchanged');

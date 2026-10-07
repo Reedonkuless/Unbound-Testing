@@ -1,6 +1,6 @@
 {
   "tooling_version": "0.6.5",
-  "supported_source_version": "Pokémon Unbound v2.1.1.1 (owner-confirmed original file)",
+  "supported_source_version": "Pok\u00e9mon Unbound v2.1.1.1 (owner-confirmed original file)",
   "source": {
     "size": 33554432,
     "sha1": "b4776b82a4c7915d0fadeaa27e013523f99dfd94",
@@ -21,11 +21,14 @@
   },
   "naming_reconciliation": "Owner explicitly confirmed Pokemon Unbound (v2.1.1.1).gba on 2026-10-04. Earlier v2.1.1 wording is superseded; pre-hotfix v2.1.1 is not silently accepted.",
   "rom_unchanged": true,
-  "patch_method": "UPF1 exact frozen target slices; CP09 base payload plus cumulative CP09→CP11 owned repairs; exact CP11 independently QA-passed",
+  "patch_method": "UPF1 exact frozen target slices; CP09 base payload plus cumulative CP09\u2192CP11 owned repairs; exact CP11 independently QA-passed",
   "custom_namespace": "cp08-namespace.json",
-  "checkpoint_status": "CP09 independent PASS / CP10 independent PASS / CP11 independent PASS; preview candidate; production not yet promoted",
+  "checkpoint_status": "CP11 PROMOTED / IMPLEMENTATION CLOSED / PRIMARY-QA PASS / INDEPENDENT-QA PASS / PROMOTION CLOSED",
   "cp08_to_cp09_changed_bytes": 74,
   "cp09_to_cp10_changed_bytes": 280,
   "cp10_to_cp11_changed_bytes": 133,
-  "sandbox_behavior": "Advanced Stat Scanner tools enabled while Sandbox flag remains OFF; normal Expert progression preserved."
+  "sandbox_behavior": "Advanced Stat Scanner tools enabled while Sandbox flag remains OFF; normal Expert progression preserved.",
+  "promotion_status": "CLOSED",
+  "next_development_parent": "CP11_NORMAL_EXPERT_SCANNER_DEV.gba",
+  "zero_unowned_changes": true
 }
