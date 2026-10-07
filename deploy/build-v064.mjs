@@ -13,19 +13,25 @@ for(const key of keys.slice(1)){if(key!==last+1){runs.push([start,last+1]);start
 const header=Buffer.alloc(12);header.write('UPF1');header.writeUInt32LE(release.target.size,4);header.writeUInt32LE(runs.length,8);
 const payload=Buffer.concat([header,...runs.map(([a,b])=>{const h=Buffer.alloc(8);h.writeUInt32LE(a,0);h.writeUInt32LE(b-a,4);return Buffer.concat([h,Buffer.from(Array.from({length:b-a},(_,i)=>bytes.get(a+i)))]);})]);
 write('dist/rom-patcher/'+release.payload.filename,payload);
-if(createHash('sha256').update(payload).digest('hex')!==release.payload.sha256)throw Error('CP09 payload integrity mismatch');
+if(createHash('sha256').update(payload).digest('hex')!==release.payload.sha256)throw Error('CP11 payload integrity mismatch');
+if(payload.length!==release.payload.size)throw Error('CP11 payload size mismatch');
 
-copy('deploy/cp10-release.json','dist/cp10-release.json');
+copy('deploy/cp10-release.json','dist/cp11-release.json');
 let html=read('dist/rom-patcher/index.html','utf8');
 for(const [before,after] of [[old.target.sha1,release.target.sha1],[old.target.sha256,release.target.sha256],[old.payload.sha256,release.payload.sha256],[old.payload.filename,release.payload.filename],[old.target.filename,release.target.filename]]){
  if(!html.includes(before))throw Error('Missing CP09 build anchor '+before);
  html=html.replaceAll(before,after);
 }
-html=html.replaceAll('CP09','CP10').replace('EXACT ACCEPTED GAMEPLAY BASELINE','REPAIR TEST CANDIDATE').replace('deterministic CP09 target.','deterministic CP09 repair candidate. Primary QA passed; independent review pending.');
+html=html.replaceAll('CP09','CP11')
+ .replace('EXACT ACCEPTED GAMEPLAY BASELINE','INDEPENDENT-QA PASSED GAMEPLAY CANDIDATE')
+ .replace('deterministic CP11 target.','deterministic CP11 gameplay candidate. CP09, CP10 and CP11 independent QA passed; production promotion remains separate.');
 write('dist/rom-patcher/index.html',html);
 for(const path of ['dist/index.html','dist/main.js']){
- let text=read(path,'utf8').replaceAll('v0.6.3','v0.6.4').replaceAll('-CP09-edited','-CP10-edited').replaceAll('CP09','CP10');
- if(path.endsWith('index.html'))text=text.replaceAll('Accepted CP08','CP09 repair candidate').replaceAll('accepted CP08 target','CP09 repair candidate');
+ let text=read(path,'utf8').replaceAll('v0.6.3','v0.6.5').replaceAll('-CP09-edited','-CP11-edited').replaceAll('CP09','CP11');
+ if(path.endsWith('index.html')){
+   text=text.replaceAll('Accepted CP08','CP11 gameplay candidate').replaceAll('accepted CP08 target','CP11 gameplay candidate');
+   text=text.replaceAll('v0.6.5 · CP08','v0.6.5 · CP11');
+ }
  write(path,text);
 }
-console.log('PASS v0.6.4 CP10 patcher candidate; editor behavior/catalog unchanged');
+console.log('PASS v0.6.5 CP11 patcher/gameplay candidate; Save Studio catalog and save parser unchanged');
