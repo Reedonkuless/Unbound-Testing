@@ -1,6 +1,6 @@
 {
-  "tooling_version": "0.6.4",
-  "supported_source_version": "Pok\u00e9mon Unbound v2.1.1.1 (owner-confirmed original file)",
+  "tooling_version": "0.6.5",
+  "supported_source_version": "Pokémon Unbound v2.1.1.1 (owner-confirmed original file)",
   "source": {
     "size": 33554432,
     "sha1": "b4776b82a4c7915d0fadeaa27e013523f99dfd94",
@@ -8,23 +8,24 @@
   },
   "target": {
     "size": 33554432,
-    "sha1": "7f2d34b769a1f7304d4d08764d8f3166ee9db6a1",
-    "sha256": "3825a66638889b5db6684a1d25959e298efdac324d44df1abb8a65df7ce1b765",
-    "filename": "CP10_CUSTOM_LEARNSET_COMPLETENESS_DEV.gba"
+    "sha1": "53cd05c82802d0f6b595cb3dbef38a5417a126f2",
+    "sha256": "6ac87588a6cfb913dbfbc7d4015f7bf8b4ce72ffc2552b4e9e0788a15c38bb07",
+    "filename": "CP11_NORMAL_EXPERT_SCANNER_DEV.gba"
   },
   "payload": {
-    "filename": "Unbound_CP10_Exact_2026-10-04.upf",
-    "size": 590266,
-    "sha1": "5936388b7a25b874896fe8b7c18737af375de6fb",
-    "sha256": "9fa5ac52d6949b55bcc35ff8b40674432c20e2bb71b89758fa5a893f83bf2783",
-    "records": 900
+    "filename": "Unbound_CP11_Exact_2026-10-07.upf",
+    "size": 590154,
+    "sha1": "96f1b3e4847025a25c259ec89a7ae19fb02955b9",
+    "sha256": "7fdfc55f675bd036de13bc12edcddf4912a59275a0322ebfd102eadc1caa7eae",
+    "records": 1077
   },
-  "naming_reconciliation": "Owner explicitly confirmed Pokemon Unbound (v2.1.1.1).gba on2026-10-04. Earlier v2.1.1 wording is superseded; pre-hotfix v2.1.1 is not silently accepted.",
+  "naming_reconciliation": "Owner explicitly confirmed Pokemon Unbound (v2.1.1.1).gba on 2026-10-04. Earlier v2.1.1 wording is superseded; pre-hotfix v2.1.1 is not silently accepted.",
   "rom_unchanged": true,
-  "changed_source_bytes": 560054,
-  "patch_method": "UPF1 exact frozen target slices; CP09 preserved; CP10 only learnset completeness",
+  "patch_method": "UPF1 exact frozen target slices; CP09 base payload plus cumulative CP09→CP11 owned repairs; exact CP11 independently QA-passed",
   "custom_namespace": "cp08-namespace.json",
-  "checkpoint_status": "FROZEN PRIMARY-QA PASS / independent review pending / test candidate",
+  "checkpoint_status": "CP09 independent PASS / CP10 independent PASS / CP11 independent PASS; preview candidate; production not yet promoted",
   "cp08_to_cp09_changed_bytes": 74,
-  "cp09_to_cp10_changed_bytes": 280
+  "cp09_to_cp10_changed_bytes": 280,
+  "cp10_to_cp11_changed_bytes": 133,
+  "sandbox_behavior": "Advanced Stat Scanner tools enabled while Sandbox flag remains OFF; normal Expert progression preserved."
 }
